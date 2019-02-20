@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>
+	 HTML 연습5
+   </title>
+    <style>
+	p{
+		font-size : 20px;
+	}
+	pre{
+		width : 500px;
+		font-size : 1.5em;
+		background : lightgray;
+		border : 2px solid blue;
+	}
+	li{
+		font-size : 1.2em;
+	}
+	
+	img{
+		width : 200px; height : 250px;
+	}
+	
+	
+	</style>
+ </head>
+	<body>
+	<!-- 블럭요소   : 한줄 전체를 차지하는 요소
+					  p, pre, h1, hr, ul, ol
+		 inline요소 : 글자 길이 만큼만 차지 하는 요소 
+					  a, img, em, strong  
+	-->
+<pre>
+<li>&lt;a&gt;태그 : 페이지 이동을 위한 태그
+   href 속성에 페이지 주소를 설정한다.
+   <a href="test9(커피연습).html" target="_self">커피연습</a></li>
+</pre>
+
+	
+	<h1>Web 커피메뉴</h1>
+	<hr color= 'red'>
+	<ul>
+		<li><a href="아메리카노.html" target="_self">아메리카노</li></a>
+		<li><a href="카페라떼.html" target="_self">카페라떼</li></a>
+		<li><a href="카푸치노.html" target="_self">카푸치노</li></a>
+	</ul>
+	<h1>Web Tea 메뉴</h1>
+	<h3>ul 번호없는 리스트</h3>
+	<hr color= 'red'>
+	<ul>
+		<li>녹차</li>
+		<li>홍차</li>
+		<li>우롱차</li>
+	</ul>
+	<h1>Web 탄산음료 메뉴</h1>
+	<h3>ol 번호있는 리스트</h3>
+	<hr color= 'red'>
+	<ol>
+		<li>콜라</a></li>
+		<li>사이다</a></li>
+		<li>환타</a></li>
+	</ol>
+	<h1>Web 탄산음료 메뉴</h1>
+	<h3> ol속의 a태그 </h3>
+	<hr color= 'red'>
+	<ol>
+		<li><a href="아메리카노.html">콜라</a></li>
+		<li><a href="카페라떼.html">사이다</a></li>
+		<li><a href="카푸치노.html">환타</a></li>
+	</ol>
+	<hr color= 'red'>
+	<!--
+	외부스타일:   별도의 .css 파일로 저장되는 스타일 설정
+	내부스타일:   head 태그사이의 <style> 설정
+	인라인스타일: 태그속에 직접 스타일을 설정 
+				  중복되는 스타일이 있다면 인라인스타일이 가장먼저 실행
+				  
+	-->
+	<h2>정의 리스트</h2>
+	<hr color= 'red'>
+	<dl>
+	<h4>
+		<dt>에스프레소</dt>
+		<dd>- 커피의 기본, 커피의 원액이다.</dd>
+		<a href="아메리카노.html" target="_self"><img src="images/스벅아아.jpg" width : "200px"; height : "300px";></a>
+		<dt>아메리카노</dt>
+		<dd>- 에스프레소에 물을 넣은 것</dd>
+		<a href="카페라떼.html" target="_self"><img src="images/베라아아.jpg" style= "width : 300; height : 500;"></a>
+		<dt>카페라떼</dt>
+		<dd>- 커피에 우유를 섞은 것</dd>
+		<a href="카푸치노.html" target="_self"><img src="images/카베베네아아.jpg"></a>
+	</h4>
+	</dl>
+
+	
+	
+	
+	</body>
+</html>

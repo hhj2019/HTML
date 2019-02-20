@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>
+	 HTML 연습2
+   </title>
+    <style>
+	img {width : 300px; height : 300px;
+	} 
+	p {width : 50%; height : 50px; 
+		color : red; font-size : 30px; 
+		background : yellow; text-align : center; 
+		}
+		h1 {
+		background : cyan;
+		}
+		em{
+		background : cyan;
+		}
+	</style>
+  </head>
+ 
+ <script>
+	function change() { 
+		p1= document.getElementsByTagName('p')[0]; 
+		/*rgb(255, 0, 0); 
+		rgb(100%, 50%, 25%); 
+		#ff0000 16진수 
+		*/
+		a= parseInt(Math.random()*255);
+		b= parseInt(Math.random()*255);
+		c= parseInt(Math.random()*255);
+		p1.style.color = 'rgb('+a+',' +b+',' +c+')';
+		p1.style.background = 'rgb('+c+',' +a+',' +b+')'; 
+		}
+ </script>
+ <body>
+    <!-- 주석 글자크기 h1~h6 자동으로 줄바뀜 
+	     한줄전체을 차지하는 요소: Block 
+		- h1~h6	
+		필요한 크기만 차지하는 요소: inline 
+		- em -->
+	<h1> null</h1>
+	<h2> null</h2>
+	<h3> null</h3>
+	<h4> null</h4>
+	<h5> null</h5>
+	<h6> null</h6> <br>
+	<h1> Welcome to the Web Progremming </h1> <br>
+	<img src = "images/커피.jpg">
+	<h2> 언제든지 오셔서 질문을 올려주세요. <em>여러분을 환영합니다.</em></h2> 
+	<h2> 내용 </h2>
+		 Html, CSS, JavaScript, jQuery, SQL, JSP, ...  <br> <br>
+	<img src="images/naver.jpg">		 
+	<p onclick="change()"> Hello World </p>
+	<em>많이 환영해요.</em>  <br> <br> <br>
+	<img src="images/Koala.jpg"> <br> <br>
+	<a href="http://www.google.com" target="_blank">
+        google.com 방문</a>
+ </body>
+</html>

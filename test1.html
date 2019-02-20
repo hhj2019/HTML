@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+ <title>
+	HTML 연습1
+ </title>
+ <style>
+	img {width : 300px; height : 300px;} 
+	p { width : 50%; height : 50px; 
+		color : red; font-size : 30px; 
+		background : yellow; text-align : center; }
+ </style>
+ <script>
+	function change() { 
+		p1= document.getElementsByTagName('p')[0]; 
+		/*rgb(255, 0, 0); 
+		rgb(100%, 50%, 25%); 
+		#ff0000 16진수 
+		*/
+		a= parseInt(Math.random()*255);
+		b= parseInt(Math.random()*255);
+		c= parseInt(Math.random()*255);
+		p1.style.color = 'rgb('+a+',' +b+',' +c+')';
+		p1.style.background = 'rgb('+c+',' +a+',' +b+')'; 
+		}
+ </script>
+ <body>
+	<p onclick="change()"> Hello World </p>
+		안녕하세요 <br>
+		<em>여러분을 환영합니다</em>.
+	<img src="images/Koala.jpg"> <br>
+	<a href="http://www.google.com" target="_blank">
+        google.com 방문</a>
+ </body>
+</html>
