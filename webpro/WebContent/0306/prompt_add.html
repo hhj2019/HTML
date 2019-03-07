@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload =function () {
+	/* 	var input;
+		 input = prompt("숫자1를 입력하세요");
+		 x = parseInt(input);
+		 input = prompt("숫자2를 입력하세요");
+		 y = parseInt(input);
+		 sum= x + y;
+		  */
+		 
+		 input1 = prompt("숫자1를 입력하세요");
+		  x = parseInt(input1);
+		 input2 = prompt("숫자2를 입력하세요");
+		 y = parseInt(input2);
+		 sum =  x + y;
+	//	 alert(sum)
+		
+		 document.getElementById("sp1").innerHTML = x;
+		 document.getElementById("sp2").innerHTML = y;
+		 document.getElementById("sp3").innerHTML = sum;
+	}
+
+</script>
+
+</head>
+<body>
+입력한 값 1 : <span id = "sp1"> </span> <br>
+입력한 값 2 : <span id = "sp2"> </span> <br>
+결과 : <span id = "sp3">  </span> <br>
+</body>
+</html>

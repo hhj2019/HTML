@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function runpro()  { 
+		
+		x = document.getElementById('su1').value;
+		  x = parseInt(x);
+		y =document.getElementById('su2').value;
+		  y = parseInt(y);
+		sum =x + y;
+		document.getElementById('sum').value = sum;
+	}
+
+</script>
+</head>
+<body>
+<h3>덧셈 하기</h3>
+            
+     수1 : <input type="text"  id="su1"><br>       
+     수2 : <input type="text"  id="su2"><br>
+        <button id="run" onclick="runpro()"> 실행 </button><br>
+     합계: <input type="text" id="sum"><br><br>
+    
+
+</body>
+</html>

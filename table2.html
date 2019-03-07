@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset= "UTF-8">
+    <title>
+		HTML 연습17
+    </title>
+    <style>
+	table {
+		border : 2px double crimson;
+	}
+	#t1 {
+		background-color : lime;
+	}
+	td {
+		text-align : center;
+	}
+	#tr1 {
+		background-color : gray;
+	}
+	#tr2 {
+		height : 30px;
+		
+	}
+	#tt {
+		width : 500px;
+	}
+	#ttt { 
+		height : 400px;
+		width : 600px;
+	}
+	#title {
+		font-size : 1.5em;
+	}
+	/*
+	#in1, #in2, #in3 {
+		text-align : left;
+	}
+	*/
+	.cont {
+		text-align : left;
+	}
+	</style>
+ </head>
+	<body>
+	 <table id="t" border="1">
+	 <caption>
+        <h2>최근에 본 영화들</h2>
+     </caption>
+    <tr id= "t1">
+        <th><em>영화제목</em></th>
+        <th><em>연도</em></th>
+        <th><em>감독</em></th>
+        <th><em>평가</em></th>
+	</tr>
+    <tr id= "t2">
+        <td>라이프 오브 파이</td>
+        <td>2013</td>
+        <td>이안</td>
+        <td>8.68</td>
+    </tr>
+	<tr id= "t3">
+        <td>레미재라블</td>
+        <td rowspan="2">2012</td>
+        <td>톰후퍼</td>
+        <td>8.28</td>
+    </tr>
+	<tr id= "t4">
+        <td colspan="2">장고: 분노의 추적자</td>
+        <td>2012</td>
+        <td>티란티노</td>
+        <td>8.29</td>
+    </tr>
+	
+</table>
+	 <table id= "tt" border="2">
+	 <br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <tr id= "tr1">
+        <th id= "title" colspan="5"><em>평생교육원 강좌 소개</em></th>
+    
+	</tr>
+    <tr id= "tr2">
+        <th>강좌이름</th>
+        <th>강의자</th>
+        <th>소개</th>
+        <th>강좌코드</th>
+		 <th>실습비</th>
+    </tr>
+	<tr id= "tr3">
+        <td>뎃생과 유화</td>
+        <td>정환</td>
+        <td class="cont" id="in1">모든 미술영역~~~~~~~~~~~~~~~~~</td>
+        <td>H28</td>
+		<td>12158411.00</td>
+    </tr>
+	<tr id= "tr4">
+        <td>바이올린</td>
+        <td>정환2</td>
+        <td class="cont" id="in2">모든 현악기영역~~~~~~~~~~~~~~~~~</td>
+        <td>H22</td>
+		<td>481531.00</td>
+    </tr>
+	<tr id= "tr5">
+        <td>성악아카데미</td>
+        <td>정환3</td>
+        <td class="cont" id="in3">모든 성악영역~~~~~~~~~~~~~~~~~</td>
+        <td>H26</td>
+		<td>7513831.00</td>
+    </tr>
+	
+</table>
+
+
+<table id= "ttt" border="3">
+	 <br>
+	<br>
+	<a href="table1.html"target="_self">돌아가기</a>
+	<br>
+	<br>
+	<br>
+	
+    <tr id= "tt1">
+        <th colspan="2">    </th>
+		<th colspan="2">    </th>
+		<th>    </th>
+		<th>    </th>
+    
+	</tr>
+    <tr id= "tt2">
+        <th colspan="4">   </th>
+        <th colspan="6">   </th>
+        
+    </tr>
+	<tr id= "tt3">
+        <td colspan="4">    </td>
+        <td colspan="6" rowspan="2">    </td>
+        
+    </tr>
+	<tr id= "tt4">
+        <td>    </td>
+        <td>    </td>
+        <td>    </td>
+		<td>    </td>
+    </tr>
+	
+	
+</table>
+	 
+	</body>
+</html>

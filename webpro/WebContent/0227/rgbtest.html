@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	#p1 {
+		color :red;
+	}
+	#p2 {
+		color : #ffff00;
+	}
+	#p3 {
+		color : rgb(30, 10, 200);
+	}
+</style>
+<script type="text/javascript">
+	function change(t) {
+		//랜덤, 불규칙한 수, 예측불가능한 수, 난수
+		//Math.random() 0.0 ~1.0 사이의 값을 돌려준다
+		r = parseInt(Math.random()*256); // 0.0 ~255.999
+		g = parseInt(Math.random()*256);
+		b = parseInt(Math.random()*256);
+		//t.style.color = 'rgb(' +r+ "," + g + "," +b+ ')';
+		//alert(r+ "," + g + "," +b);
+		//rgb값을 16진수로 변환 - toString(16)
+		r = r.toString(16);
+		g = g.toString(16);
+		b = b.toString(16);
+		t.style.color = "#" + r + g + b;
+		
+		
+	}
+</script>
+<body>
+	<p onclick="change(this)" id= "p1">무궁황 꽃이 피었습니다.</p>
+	<p onclick="change(this)" id= "p2">우리집 강아지는 복슬 강아지</p>
+	<p onclick="change(this)" id= "p3">한국에 뿌리 내리는 ‘제주도 바나나’</p>
+	<p onclick="change(this)" id= "p4">제주 바나나의 새로운 가능성</p>
+	<p onclick="change(this)" id= "p5">지구 온난화로 제주 날씨가 점점 더 따뜻해지면서 농작물도 열대화되는 중입니다.</p>
+	<p onclick="change(this)" id= "p6">지금 제주에서는 30여 농가가 바나나 농사를 짓고 있습니다.</p>
+	<p onclick="change(this)" id= "p7">더 건강한 먹거리를 찾는 소비자가 많아지면서 방부제 없는 바나나에 대한 수요가 커졌습니다.</p>
+	<p onclick="change(this)" id= "p8">제주산 바나나는 방부제 처리 없이 수확하여 며칠 후숙한 후 우리집 식탁으로 배송합니다.</p>
+</body>
+<hr color ='red'>
+	<a href="../index.html" target="_self">뒤로가기</a>
+</html>

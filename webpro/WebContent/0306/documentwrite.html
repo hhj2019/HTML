@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+pre {
+	font-style: normal;
+	font-size: 1.3em;
+	
+}
+div {
+	width: 300px;
+	height: 50px;
+	border: 2px solid red;
+	text-align: center;
+	
+}
+</style>
+<script type="text/javascript">
+	// div에 접급해서 글자색을 1초마다 한번씩 변경 하려고 한다
+	// body를 실행하고 문서가 만들어진 후에 스크립트가 실행되도록 
+	// 자동으로 호출되는 함수를 정의 한다.
+	window.onload = function() {
+		window.setInterval(function()  { 
+			res = document.getElementById('result');
+			cr = parseInt(Math.random() * 256);
+			cb = parseInt(Math.random() * 256);
+			cg = parseInt(Math.random() * 256);
+			res.style.color = 'rgb(' + cr + ',' + cb + ',' + cg + ')';
+			res.style.fontSize = '2.0em';
+			
+		}, 1000);
+		
+	}
+	
+	function run() {
+		today = new Date();
+		//document.write(today);
+		document.getElementById('date').innerHTML = today;
+		
+	}
+</script>
+</head>
+<body>
+<pre>  
+window.onload = function() { 
+body를 실행하고 문서가 만들어진 후에 스크립트가 실행되도록 한다. *실행순서를 바꿈*
+사용할 때 스크립트가 위에 있는데 동작하려고 하는 부분이 body에 있다면 사용하면 
+펑션을 사용할 수 있다
+window.setInterval(function()  {  내용	}, 1000); 1초마다 바뀜 
+사용할 때 주의 해야하는 점은 내부에서 작동하는 스크립트가 실행될 때에 1초마다 바뀌어야  하는데
+내부 펑션이 있다면 안될 수도 있다  function run() { 
+유의해서 사용하자
+</pre>
+	<div id="result">HOME</div>
+	<br>
+	<button id = "but" onclick="run()">실행</button>
+	<br>
+	<br>
+	<div id="date">  날짜  </div>
+<p>Click the button to display a dialog box which will ask for your favorite drink.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var text;
+  var favDrink = prompt("What's your favorite cocktail drink?", "Daiquiri");
+  switch(favDrink) {
+    case "Martini":
+      text = "Excellent choice. Martini is good for your soul.";
+      break;
+    case "Daiquiri":
+      text = "Daiquiri is my favorite too!";
+      break;
+    case "Cosmopolitan":
+      text = "Really? Are you sure the Cosmopolitan is your favorite?";
+      break;
+    default:
+      text = "I have never heard of that one..";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+
+</html>

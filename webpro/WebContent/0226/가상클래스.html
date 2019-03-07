@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/mycss.css"/>
+<style type="text/css">
+	a {
+	 font-size:  1.3em;
+	}
+	/* 처음 만들어 실행, 한번도 방문 안 한 상태 */
+	a :link {
+		color : green;
+		text-decoration:  none;
+	}
+	/* 방문했던 적이 있는 상태  */
+	a:VISITED {
+		color : red;
+}
+	/* 마우스가 올라와 있을 때 */
+	a:HOVER {
+		color : black;
+		font-size: 1.5em;
+		text-decoration: overline;
+		
+}
+ /* a 요소가 늘려지는 상태 */
+  	a:ACTIVE {
+		color : lime;
+		background:  cyan;
+}
+
+	input:FOCUS {
+	border: 2px solid lime;
+	background: yellow;
+	
+}
+</style>
+</head>
+<body>
+<pre>
+가상 클래스
+가상 클래스는 요소의 특정 상태에 따라 스타일을 정리한다.
+특정 상태란?
+마우스가 올라와 있을 때 
+링크를 방문했을 때와 방문 안 했을 때의 차이
+포커스가 들어와 있을 때
+
+클래스가 존재하지 않지만 가상 클래스를 임의로 지정해서 선택한다.
+가상 클래스는. 대신 : 을 사용한다.
+가상 클래스 이름은 CSS 표준에 의해 미리 지정되어 있기 때문에 
+이름은 바꿀 수 없다.
+</pre>
+<br>
+<br>
+<a href="http://www.w3schools.com">w3schools</a>
+<a href="http://www.naver.com">네이버</a>
+<a href="http://www.nate.com">네이트</a>
+<br>
+<br>
+<input type="text" name="name">
+</body>
+<hr color ='red'>
+	<a href="../index.html" target="_self">뒤로가기</a>
+</html>

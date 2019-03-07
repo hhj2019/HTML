@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function myFunction() {
+		var text;
+		var value = prompt("이름을 입력하세요", "정지후");
+		switch (value) {
+		case "정지후":
+			text = "정지후. 기여워♡";
+			break;
+		case "송진원":
+			text = "앙 진원띠~!";
+			break;
+		case "김재권":
+			text = "Really? Are you sure the 김재권 is your favorite?";
+			break;
+		case "전성희":
+			text = "고게맞지~~! 정답이지";
+			break;
+		default:
+			text = "다른거쓰지마";
+		}
+		document.getElementById("demo").innerHTML = text;
+	}
+	window.onload = function () {
+		var textContent;
+		var value = window.prompt("집에 가고 싶은 마음을 숫자로 표현하세요", "");
+
+		document.getElementById("sp1").textContent = value;
+		if(value == null || value == "" ) {	
+			document.getElementById("sp2").textContent = "입력이 이상해요";
+		}
+		else if (value >= 20) {
+			document.getElementById("sp2").textContent = "집에 갈 수 있어요";
+		} else {
+			document.getElementById("sp2").textContent = "아직이예요";
+		}
+		//document.getElementById("demo1").innerHTML = text;
+	}
+</script>
+</head>
+<body>
+	<h1>입력하기</h1>
+	입력한 값 :<span id="sp1"> </span>
+	<br> 조건 : 20 보다 크면 출력 아니면 그다음 출력
+	<br> 결과 :<span id="sp2"> </span>
+	<br>
+	<button onclick="myFunction()">Try it</button>
+	
+
+	<p id="demo"></p>
+	
+
+
+</body>
+</html>

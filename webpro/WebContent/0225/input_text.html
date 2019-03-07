@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function calc() {
+		var a, b;
+		a = document.getElementById("in1").value;
+		b = document.getElementById("in2").value;
+		//폼에서 입력한 값을 가져와서 대입
+		c = a * b;
+		alert(c)
+	}
+	function  colorChange(c) {
+		document.body.style.background = c;
+	}
+</script>
+<style>
+	body {
+		background:  pink;
+	}
+</style>
+
+</head>
+<body>
+	<form>
+		<input id= "in1" type ="text" value= "100"  name="s1"> <br>
+		<input id= "in2" type ="text" value= "1" name="s2"> <br>
+		<input type ="button"  onclick="calc()" value= "확인"> <br>
+		<button onclick="calc()">전송</button> <br>
+		<hr color = "red" >
+		
+		<input type="radio" onclick="colorChange('blue')" value="blue" name ="color"> 파랑 
+		<input type="radio" onclick="colorChange('green')" value="green" name ="color"> 초록 
+		
+		</form>
+</body>
+<hr color ='red'>
+	<a href="../index.html" target="_self">뒤로가기</a>
+</html>

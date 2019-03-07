@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="../css/mycss.css"/> 
+<style>
+
+	fieldset {
+	background-color : pink;
+	width: 1550px;
+	
+}
+
+form input {
+	
+	border:  2px solid pink;
+
+	
+}
+
+form > input {
+	 border:  2px dotted  lime;
+
+}
+</style>
+<!--외부 -->
+</head>
+
+<body>
+<pre>
+자식후손선택자 
+스타일
+</pre>
+	<form action="formsend.jsp" method="post" >
+		<label>이름 :</label> <input type ="text" name="name"> <br>
+		<label>비밀번호 :</label> <input type ="password" name="pass"> <br>		
+		<label>이메일 :</label> <input type ="email" name="email"> <br>
+		<br>
+		<fieldset>
+		<legend>전송하기</legend>
+		<input type ="submit" value= "submit">
+		<input type ="image"  src="../images/naver.jpg" alt="??">
+		<button>button전송</button> 
+		</fieldset>
+		<br>
+		<fieldset>
+		<legend>전송불가</legend>
+		<button type ="button" onclick="alert('hello')">button</button>
+		<input type ="button" onclick="proc()" value= "확인">
+		</fieldset>
+		<br>
+		<fieldset>
+		<legend>성별</legend>
+			<input type="radio" name="gender" value="m"> 남자
+			<input type="radio" name="gender" value="w"> 여자		
+		</fieldset>
+		
+			<fieldset>
+		<legend>성별</legend>
+		<label class="gend" for ="m">남자 </label>
+			<input type="radio" id="m" name="gender" value="m">
+		<br>
+		<label class="gend" for ="w">여자 </label>
+			<input type="radio" id="w" name="gender" value="w">
+		</fieldset>
+		<input type="file" name="file"> 
+	</form>
+</body>
+<hr color ='red'>
+	<a href="../index.html" target="_self">뒤로가기</a>
+</html>

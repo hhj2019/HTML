@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input[type=image] {
+		width : 50px;
+		height: 30px;
+		border : 1px solid blue;
+		vertical-align: middle;
+	}
+	input[type=button],  input[type=submit], button {
+		height: 25px;
+	}
+</style>
+<script type="text/javascript">
+	function proc() {
+		// 변수선언 없이도 사용가능하다. var a; 
+		// 값을 대입 
+		a = 10;
+		b = 10.0225;
+		// 계산
+		c = a + b;
+		// 출력
+		alert(c);
+	}
+</script>
+
+</head>
+<body>
+	함수 : 가능을 수행 <br>
+	내장함수 : alert('메세지'), getElementById('Id'이름 )<br>
+	사용자함수 : 함수를 직접 만들어 정의 한다 <br>
+	사용자 함수가 정의되있으면 호출하여 사용한다. <br>
+	함수정의 : function 함수이름(변수) {  }  <br>
+	<br> <br>
+	<form action="formsend.jsp" method="post">
+		<input type ="text" name="name"> <br>
+		<input type ="password" name="pass"> <br>		
+		<input type ="email" name="email"> <br>
+		<p>전송하기</p>
+		<input type ="submit" value= "submit">
+		<input type ="image"  src="../images/naver.jpg" alt="??">
+		<button>button전송</button>
+		<p>전송안됨</p>
+		<button type ="button" onclick="alert('hello')">button</button>
+		<input type ="button" onclick="proc()" value= "확인">
+	</form>
+</body>
+<hr color ='red'>
+	<a href="../index.html" target="_self">뒤로가기</a>
+</html>

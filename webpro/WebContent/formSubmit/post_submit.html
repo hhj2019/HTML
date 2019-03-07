@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	/* label은 inline 요소이다. (줄안바뀌어)
+	   inline요소에는 크기를 지정할 수 없다.
+	   인라인 요소를 그대로 유지 (줄이 바뀌지 않는다)
+	   블럭요소 속성을 설정해준다.(크기 조절 가능)
+	  display
+	*/
+	label {
+		width : 200px;
+		height : 30px;
+		/*background : yellow;*/
+		display : inline-block;
+	}
+	
+	img {
+		width : 50px;
+		height : 40px;
+	}
+	
+	input[type=image] {
+		width : 50px;
+		height : 40px;
+	}
+	
+	div{
+		width : 300px;
+		border : 2px solid blue;
+		margin-top : 30px;
+		margin-bottom : 30px;
+		padding : 20px;
+	}
+	
+	</style>
+
+</head>
+
+<body>
+ <form action="posttest.jsp" method="post">
+ 	<label for="name">이름 :</label> 
+ 	<input type = "text" size="10" name = "name" value="korea" id="name"> <br>
+ 	
+ 	<label for="tel">전화번호 : </label> 
+ 	<input type="tel" name="tel" id="tel"> <br>
+ 	
+ 	<label for="email">이메일 : </label> 
+ 	<input type="email" name="email" id="email"> <br>
+ 	
+ 	<input type="hidden" name="age" value="60">
+ 	
+ 	<img src="../images/스벅아아.jpg"> <br>
+ 	
+ 	첨부파일 :
+ 	<input type="file" name="file"> <br>
+ 	<br>
+ 	<input type="radio" name="gender" value="f" checked>남자
+ 	<input type="radio" name="gender" value="w" checked>여자
+ 	
+ 	<br><br>
+ 	
+ 	가고싶은 도시 및 나라 : 
+ 	<input type="checkbox" name="dosi" value="a" checked>프랑스
+ 	<input type="checkbox" name="dosi" value="b" checked>스위스
+ 	<input type="checkbox" name="dosi" value="a">네덜란드
+ 	<input type="checkbox" name="dosi">호주
+ 	<input type="checkbox" name="dosi">방콕
+ 	<br><br>
+ 	
+ 	먹고싶은 음식 :
+ 	<select name="food" multiple size="4">
+ 		<option value="1">김치찌개</option>
+ 		<option value="2">삼겹살</option>
+ 		<option value="3">비빔밥</option>
+ 		<option value="4" selected>된장찌개</option>
+ 		<option value="5">돈까스</option>
+ 		<option value="6">카레덮밥</option>
+ 		<option value="7">불고기</option>
+ 	</select>
+ 	<br><br>
+ 	
+ 	날짜선택 : <input type="date" name="date"><br>
+ 	
+ 	input type image는 submit 기능과 같다. <br>
+ 	<div>
+ 		<input type="image" src="../images/커피.jpg">
+ 		<input type="submit" value="전송"> 
+ 		<button>전송버튼</button>
+ 	</div>
+ 	
+ 		<input type="reset" value="취소">
+ 		<input type="button" value="확인" onclick="alert('10000원입니다')">
+ 	
+ 	
+ </form>
+</body>
+<hr color ='red'>
+	<a href="../index.html" target="_self">뒤로가기</a>
+</html>
+
+
+
+
+
+
+
