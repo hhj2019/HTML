@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div, textarea {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body { //
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+	text-align: center;
+}
+
+div {
+	background-image: url(../images/이쁜사진2.jpg);
+	border-radius: 10px;
+	width: 50%;
+	height: 500px;
+	border: 2px solid #8A0868;
+	overflow: auto;
+	margin: 5px;
+	text-align: center;
+	font-size: 1.8em;
+	margin-left: 25%;
+}
+
+#shopping_cart {
+	width: 450px;
+	height: 100px;
+	padding: 10px;
+	border: 2px solid #8A0868;
+}
+</style>
+<script type="text/javascript">
+	function changeColor(c) {
+		document.body.style.backgroundColor = c;
+	}
+	function sub() {
+		var x = document.getElementById("name");
+		x.value = x.value.toLowerCase();
+	}
+	function OnButtonDown(button) {
+		button = document.body.style.backgroundColor = "#F781D8";
+	}
+	function OnButtonUp(button) {
+		button = document.body.style.backgroundColor = "white";
+	}
+	function OnButtonClick(button) {
+		button = document.body.style.fontSize = "3.5em";
+	}
+
+	function allowDrop(e) {
+		e.preventDefault(); //preventDefault 는 기본 정의 이벤트의 동작을 막아준다 
+	}
+
+	function handleDragStart(e) {
+		e.dataTransfer.effectAllowed = 'move';
+		e.dataTransfer.setData("Text", e.target.id);
+	}
+	function handleDrop(e) {
+		e.preventDefault();
+		var src = e.dataTransfer.getData("Text");
+		if (e.target.tagName == "IMG") {
+			e.target.parentNode.appendChild(document.getElementById(src));
+		} else {
+			e.target.appendChild(document.getElementById(src));
+		}
+	}
+</script>
+</head>
+<body id="target">
+	<div>
+		<form method="POST">
+			<input type="radio" name="C1" value="v1"
+				onclick="changeColor('lightblue')">파랑색 <input type="radio"
+				name="C1" value="v2" onclick="changeColor('lightgreen')">녹색
+		</form>
+	</div>
+
+	대문자로 입력하고 입력필드를 벗어나면 소문자로 변경됩니다.
+	<br> 영어단어:
+	<input type="text" id="name" onchange="sub()">
+
+	<button onmousedown="OnButtonDown(this)" onmouseup="OnButtonUp(this)">
+		UP AND DOWN</button>
+
+	<button onclick="OnButtonClick(this)">CLICK!</button>
+
+
+	<p>원하는 물건을 끌어서 옮기세요.</p>
+	<div id="shopping_cart" ondrop="handleDrop(event)"
+		ondragover="allowDrop(event)"></div>
+	<br>
+	<img id="img1" src="../images/짱구.jpg" draggable="true"
+		ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="img2" src="../images/맹구.jpg" draggable="true"
+		ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="Img3" src="../images/짱아.jpg" draggable="true"
+		ondragstart="handleDragStart(event)" width="150" height="100">
+
+
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

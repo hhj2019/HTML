@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div, textarea {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body { //
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+	text-align: center;
+}
+
+div {
+	background-image: url(../images/이쁜사진2.jpg);
+	border-radius: 10px;
+	width: 60%;
+	height: 500px;
+	border: 2px solid #8A0868;
+	overflow: auto;
+	margin: 5px;
+	text-align: center;
+	font-size: 1.6em;
+	margin-left: 25%;
+	
+}
+textarea {
+	font-size: 1.3em;
+	text-align: center;
+	border-radius: 10px;
+}
+input {
+	vertical-align: middle;
+	border-radius: 10px;
+	
+}
+table {
+	border-collapse:  collapse;
+	display: none;
+	
+}
+#blist  th{
+	width:  150px;;
+	
+}
+.cont {
+	display:  none;
+}
+</style>
+<script type="text/javascript">
+function view(clicktr) {
+	f = document.ff;
+	// table에서 내용을 가져다가 입력 폼에 다시 출력 한다 
+	// 메게변수 clickr은 클릭한 tr을 받은 변수 - td로 접근, 값을 가져온다
+ 	tdlist = 	clicktr.getElementsByTagName("td");
+ 	f.num.value =   tdlist[0].textContent;
+	f.name.value =   tdlist[1].textContent;
+	f.id.value = tdlist[2].textContent;
+	f.jp.value = tdlist[5].textContent;
+	
+	//f.jp.value = clicktr.getElementsByClassName('cont')[0];
+}
+num =1;
+function proc1() {
+	// 입력한 값을 가져온다 - 각 항목의 공백검증 
+	
+	// tr태크를 생성한다
+	// td에 입력한 값으로 설정한다 
+	f = document.ff;
+	
+	namevalue = f.name.value; // 작성자
+	if(namevalue.trim().length == 0){
+		alert("작성자 입력");
+		f.name.focus();
+		return;
+	}
+	idvalue = f.id.value; // 제목
+	if(idvalue.trim().length == 0){
+		alert("제목 입력");
+		f.id.focus();
+		return;
+	}
+	jpvalue = f.jp.value; // 내용
+	if(jpvalue.trim().length == 0){
+		alert("내용 입력");
+		f.jp.focus();
+		return;
+	}
+	content10 = jpvalue;
+	if(jpvalue.length > 10){
+		content10 = jpvalue.substr(0, 10) + "....."	
+	} 
+	
+	today = new Date();
+	datevalue =	today.toLocaleDateString();
+	
+	// tr태크를 생성한다 - createElement()
+	// td에 입력한 값으로 설정한다 
+	newtr = document.createElement("tr");
+	// onclick 이벤트를 설정 
+	// view() 함수를 호출하고 파라미터로 현재클릭한 tr을 this로 넘긴다
+	newtr.setAttribute("onclick", "view(this)");
+	
+	
+	tdtag = "<td>" + num + "</td>";
+	tdtag += "<td>" + namevalue + "</td>";
+	tdtag += "<td>" + idvalue + "</td>";
+	tdtag += "<td>" + content10 + "</td>";
+	tdtag += "<td>" + datevalue + "</td>";
+	// 4번째 td를 별도로 만들고 class 이름을 cont 로 했을 경우 
+//	tdtag += "<input  class ='cont' type = hidden value =' " + jpvaule +" '>";
+	//tdtag +=	 "</td>";
+	tdtag += "<td class ='cont'>" + jpvalue + "</td>";
+	
+	//newtr에 tdtag값을 출력
+	newtr.innerHTML = tdtag;
+	num++;
+	// tr 를 bodytr에 추가 -appendChild
+	ttbody =  document.getElementById("bodytr");
+	ttbody.appendChild(newtr);
+	//blist 테이블의 속성으로 보여지게 한다 display 
+	document.getElementById("blist").style.display = "block";
+	
+	f.name.value = "";
+	f.id.value  = "";
+	f.jp.value  = "";
+	f.name.focus();
+}
+
+function modify() {
+	// 새롭게 수정한 내용을 가져온다 -hidden으로 되어 있는 num도 가져온다 
+	//numvalue 와 table의 번호와 같은행의 내용수정ㅎ
+	
+	numvalue = f.num.value;
+	
+	wvalue = f.name.value;
+	tvalue = f.id.value;
+	cvalue = f.jp.value;
+	
+	content10 = cvalue;
+	if(cvalue.length > 10){
+		content10 = cvalue.substr(0, 10) + "....."	
+	} 
+	
+	today = new Date();
+	datevalue =	today.toLocaleDateString();
+	
+	trtag = document.getElementsByTagName("tr")[numvalue];
+	
+	
+	trtag.getElementsByTagName("td")[1].textContent = wvalue;
+	trtag.getElementsByTagName("td")[2].textContent = tvalue;
+	trtag.getElementsByTagName("td")[3].textContent = content10;
+	trtag.getElementsByTagName("td")[4].textContent = datevalue;
+	trtag.getElementsByTagName("td")[5].textContent = cvalue;
+	
+	f.name.value = "";
+	f.id.value  = "";
+	f.jp.value  = "";
+	f.name.focus();
+	
+}
+</script>
+</head>
+<body>
+<div>
+		<h4>게시판</h4>
+		<form action="jp" method="post" name="ff">
+			작성자 <br> 
+			<input type='text' name="name" id='name' size="5"> <br> 
+			<input type="hidden" name = "num">
+			제목 <br>
+			  <input type='text' name="id" id='username' size="10"> <br> 
+			<label> 내용</label> <br>
+			<textarea name = "jp" id ="jp" rows="5" cols="20"> </textarea><br>
+			 <input type="button" onclick="proc1()" value='저장'> 
+			<input type='reset' value='취소'> 
+			<input  type="button"  onclick="modify()" value='수정'>
+			<br>
+			<br>
+			
+			<hr color="black">
+			<table id="blist" border="1">
+			<thead>
+			<tr>
+			<th>번호</th>
+			<th>작성자</th>
+			<th>제목</th>
+			<th>내용</th>
+			<th>날짜</th>
+			</tr>
+			</thead>
+			
+			<tbody id="bodytr"> 
+			<tr>
+			
+			</tr>
+			 </tbody>
+			 
+			 </table>
+		</form>
+	</div>
+	저장 버튼 클릭하면 입력한 값을 가지고 form밑으로 <br>
+	table의 display 속성을 block으로 지정으로 보여지게 하고 <br> 
+	저장버튼 클릭 할때마다 tr, td태그를 생성해서 tbody에 출력한다 <br>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

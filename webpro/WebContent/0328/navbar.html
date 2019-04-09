@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>navbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+ 
+ 
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 5px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 5px;
+      }
+      .row.content {height:auto;} 
+    }
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+	font-size: 2.5em;
+}
+img{
+	width: 45px;
+	height: 45px;
+}
+.navbar-brand {
+	//background-color:  #696969;
+}
+#gsj{
+	margin-top:  -10px;
+}
+.navbar .nav il a:HOVER {
+	background-color:  #696969;
+	font-size: 1.2em;
+}
+ </style>
+ 
+ <script type="text/javascript">
+ 	function pro(litag) {
+ 			mainmenu = 	litag.getElementsByClassName('dropdown-toggle')[0];
+ 		//dropdown-toggle 
+ 		// 주메뉴 
+ 		menu = 	mainmenu.firstChild.data;
+ 		
+   downclass=    	litag.getElementsByClassName('dropdown-menu')[0];
+   submenu =  downclass.getElementsByTagName('a');
+ 	 item =	'<a href="#" class="list-group-item active">' +  menu + '</a>';
+   
+   for(i=0; i < submenu.length; i++){
+	   
+	   item+=   '<a href="#" class="list-group-item" >' +submenu[i].textContent+ '</a>';
+	   submenu[i].addEventListener('click', sudmenuPrint); 
+	 
+   }
+   group = document.getElementsByClassName('list-group')[0];
+   group.innerHTML = item;
+ 		//alert(menu);
+ 		// 재구성후 재구성된 항목에도 이벤트부여
+ 		
+ 	 	/* for(i =0; i <submenu.length; i++){
+		 			
+ 			submenu[i].addEventListener('click', sudmenuPrint); 
+ 			
+ 		}  */
+ 		items =  document.getElementsByClassName("list-group-item");
+ 		
+ 	   for(i=0; i < items.length; i++){
+ 			if(items[i].getAttribute('class').match('active') ) continue;
+ 			// 액티브문자가 포함되어 있지 않으면 이벤트를 등록한다 
+ 			// click 이벤트 sudmenuPrint 함수이름
+ 			items[i].addEventListener('click', sudmenuPrint); 
+ 		}
+ 	   
+ 	}
+ </script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img id = "gsj" alt="" src="../images/달.jpg"> </a>
+    </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" class="list-group-item" ><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
+
+
+        
+        <li><a href="#" class="list-group-item" ><span class="glyphicon glyphicon-triangle-right"></span> 회원가입</a></li>
+      </ul>
+    </div>
+  
+</nav>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+      <li class="dropdown" onclick="pro(this)">
+   		 <a class="dropdown-toggle" type="button" data-toggle="dropdown">MyPage
+   		 <span class="caret"></span></a>
+   		 <ul class="dropdown-menu">
+  			    <li><a href="#">Home</a></li>
+  			    <li><a href="#">About</a></li>
+   			    <li><a href="#">Projects</a></li>
+   			   <li><a href="#">Contact</a></li>
+    </ul>
+  </li>
+  
+        <li class="dropdown" onclick="pro(this)">
+   		 <a class="dropdown-toggle" type="button" data-toggle="dropdown">notice board
+   		 <span class="caret"></span></a>
+   		 <ul class="dropdown-menu">
+  			    <li><a href="../0326/공지게시판.html">공지게시판</a></li>
+  			    <li><a href="../0326/QnA게시판.html">QnA게시판</a></li>
+   			    <li><a href="../0327/QnA.html">QnA</a></li>
+    </ul>
+  </li>
+  
+        <li class="dropdown" onclick="pro(this)">
+   		 <a class="dropdown-toggle" type="button" data-toggle="dropdown">Event
+   		 <span class="caret"></span></a>
+   		 <ul class="dropdown-menu">
+  			    <li><a href="../0325/할인율.html">할인율</a></li>
+  			    <li><a href="../0326/진행중인이벤트.html">진행중인이벤트</a></li>
+  			    <li><a href="./0328/1+1.html">1+1</a></li>
+  			   
+   	</ul>
+  </li>
+  
+  
+       <!--  <li class="#"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li> -->
+        
+        
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+
+</body>
+
+</html>

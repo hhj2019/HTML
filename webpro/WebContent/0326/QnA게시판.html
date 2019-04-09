@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+.accordion {
+	background: #F781D8;
+	padding: 12px;
+	width: 100%;
+	border: 2px solid #8A0868;
+}
+
+.accordion:HOVER {
+	background: #ffffcc;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	border-radius: 10px;
+	overflow: auto;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	font-size: 1.3em;
+	padding-top: 5px;
+	width: 150px;
+	height: 245px;
+	display: inline-block;
+}
+
+.pinfo {
+	width: 80%;
+	float: left;
+}
+
+.pbutton {
+	text-align: right;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+
+		alist = document.getElementsByClassName("action");
+		for (i = 0; i < alist.length; i++) {
+			alist[i].addEventListener('click', actionProc);
+		}
+	}
+
+	function actionProc() {
+		namettr = this.getAttribute("name");
+		idxattr = this.getAttribute("idx");
+		alert(namettr + idxattr)
+	}
+	function saveData() {
+		f = document.ff;
+		wvalue = f.name.value;
+		tvalue = f.id.value;
+		cvalue = f.jp.value;
+
+		alert(wvalue + "/" + tvalue + "/" + cvalue);
+
+		f.name.value = "";
+		f.id.value = "";
+		f.jp.value = "";
+
+	}
+</script>
+</head>
+<body>
+
+	<div class="container">
+		<h2>QnA게시판</h2>
+		<br>
+		<button type="button" class="btn btn-danger  btn-sm"
+			data-toggle="modal" data-target="#myModal">글쓰기</button>
+		<br> <br>
+		<div class="panel-group" id="parent">
+			<div class="panel panel-default">
+
+				<div class="panel-heading">
+
+					<h4 class="panel-title">
+						<!--        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+    -->
+						<button class="accordion" data-toggle="collapse"
+							data-parent="#parent" href="#collapse1">안녕하세요</button>
+
+					</h4>
+				</div>
+				<div id="collapse1" class="panel-collapse collapse">
+					<div class="panel-body">
+						<p class="pinfo">작성자 : 관리자 작성일 : 2019.03.26 조회수 :
+							1564684123165</p>
+						<p class="pbutton">
+							<button idx="1" name="modify" class="action">수정</button>
+							<button idx="1" name="delete" class="action">삭제</button>
+						</p>
+						<hr color="black">
+						<p class="pinfo">내용</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<button class="accordion" data-toggle="collapse"
+							data-parent="#parent" href="#collapse2">반갑습니다</button>
+
+					</h4>
+				</div>
+				<div id="collapse2" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<p class="pinfo">작성자 : 관리자 작성일 : 2019.03.26 조회수 :
+							1564684123165</p>
+
+						<p class="pbutton">
+							<button idx="2" name="modify" class="action">수정</button>
+							<button idx="2" name="delete" class="action">삭제</button>
+						</p>
+						<hr color="black">
+						<p class="pinfo">내용</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<button class="accordion" data-toggle="collapse"
+							data-parent="#parent" href="#collapse3">안녕히가세요</button>
+
+					</h4>
+				</div>
+				<div id="collapse3" class="panel-collapse collapse">
+					<div class="panel-body">
+						<p class="pinfo">작성자 : 관리자 작성일 : 2019.03.26 조회수 :
+							1564684123165</p>
+						<p class="pbutton">
+							<button idx="3" name="modify" class="action">수정</button>
+							<button idx="3" name="delete" class="action">삭제</button>
+						</p>
+						<hr color="black">
+						<p class="pinfo">내용</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">게시판</h4>
+				</div>
+				<div class="modal-body">
+
+					<form action="jp" method="post" name="ff">
+						작성자 <br> <input type='text' name="name" id='name' size="5">
+						<br> <input type="hidden" name="num"> 제목 <br> <input
+							type='text' name="id" id='username' size="10"> <br>
+						<label> 내용</label> <br>
+						<textarea name="jp" id="jp" rows="5" cols="20"> </textarea>
+						<br> <input class="btn btn-primary" type="button"
+							onclick="saveData()" value='저장'> <input
+							class="btn btn-primary" type='reset' value='취소'>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

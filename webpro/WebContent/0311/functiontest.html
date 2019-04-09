@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 300px;
+	height: 100px;
+	border: 2px solid black;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; 
+	//font-size: 1.3em;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+		//입력한 값을 가져오기
+		a = document.getElementById("price").value;
+		b = document.getElementById("su").value;
+		sum = a * b;
+
+		document.getElementById("result1").innerHTML = sum;
+
+	}
+
+	function add(a, b) {
+		return a + b;
+	}
+	function sub(a, b) {
+		 res1 = a - b;
+	}
+
+	function multi(a, b) {
+		 res2 = a * b;
+	}
+
+	function divide(a, b) {
+		return a / b;
+	}
+
+	window.onload = function() {
+		var x = parseInt(prompt("첫번쨰 수 입력:"));
+		var y = parseInt(prompt("두번째 수 입력:"));
+
+		addres = add(x, y); //함수 x, y (실인수 실제값)
+		sub(x, y);
+		multi(x, y);
+		divide(x, y);
+		divideres = divide(x, y);
+
+		document.getElementById("aa").innerHTML = "덧셈결과" + addres + "<br>";
+		document.getElementById("aa").innerHTML += "나눗셈결과" + divideres + "<br>";
+		//함수내에서 var 없이 선언
+		document.getElementById("aa").innerHTML += "뺄셈결과" +res1+ "<br>";
+		document.getElementById("aa").innerHTML += "곱셈결과" +res2+ "<br>";
+		// 함수내에서 var res1, res2 선djs 지역변수	
+	}
+</script>
+</head>
+<body>
+	가격 :
+	<input type="text" id="price">
+	<br> 
+	수량 :
+	<input type="text" id="su">
+	<br>
+
+	<input type="button" value="계산" onclick="proc1()">
+	<br>
+	<br>
+	<div id="result1"></div>
+
+	<hr color="black">
+	<br>
+	<pre>
+prompt 함수를 이용해서 2개의 수를 입력받고 사칙연산을 수행해서 출력	
+</pre>
+	<br>
+	<div id="result2">
+		<p id="aa"></p>
+	</div>
+
+
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+
+div {
+	border-radius: 10px;
+	width: 50%;
+	height: 100px;
+	border: 2px solid gray;
+	overflow: auto;
+	margin: 5px;
+	background: #ffffe6;
+	text-align: center;
+	font-size: 1.6em;
+}
+ P {
+	 font-size: 1.5em;
+ }
+</style>
+<style type="text/css">
+	img {
+	width:  300px;
+	height: 300px;
+	}
+</style>
+<script type="text/javascript">
+	arrimg =[ '../images/나루토.jpg', '../images/사스케.jpg', '../images/사쿠라.jpg', '../images/록리.jpg', '../images/이타치.jpg', '../images/카카시.jpg', '../images/가아라.jpg'];
+	window.onload =function() {
+	myimg = document.getElementById("image");
+	a = setInterval(function() {
+		idx = Math.floor(Math.random() * arrimg.length);
+		myimg.src =  arrimg[idx];
+	}, 1000)
+	console.log(a);
+	}
+	function stopChange() {
+		clearInterval(a);
+		
+	}
+	
+	function changcolor() {
+	b = setInterval(function() {
+	pp =	document.getElementsByTagName("p")[0];	
+	pp.style.background = pp.style.background == 'yellow' ? 'green' : 'yellow';
+		
+		}, 1000)
+		console.log(b);
+	}
+	function stopTextColor() {
+	clearInterval(b);
+	}
+</script>
+</head>
+<body>
+	<img id = "image" src ="../images/나루토.jpg">
+	<br>
+	<button onclick="stopChange()"> 중지 </button>
+	<br>
+	<hr color="black">
+	<div id="target" onclick="changcolor()">
+        <p>클릭하세요 색상이 바뀌어요 마술이죠</p>
+    </div>
+    <button onclick="stopTextColor()">중지</button>
+	
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

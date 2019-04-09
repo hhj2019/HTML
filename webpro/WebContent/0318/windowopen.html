@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+
+div {
+	border-radius: 10px;
+	width: 50%;
+	height: 100px;
+	border: 2px solid gray;
+	overflow: auto;
+	margin: 5px;
+	background: #ffffe6;
+	text-align: center;
+	font-size: 1.6em;
+}
+</style>
+<script type="text/javascript">
+	function winopen() {
+		window.open("winsub.html", "_blak", "width = 300px heigth = 300px");
+		
+	}
+</script>
+</head>
+<body>
+	새로운 창(자식창)에서 이름과 전화번호를 입력받아서
+	<br>
+	현재창(부모창)의 div 요소에 출력
+	<br>
+	자식창에서 부모창을 나타내는 속성은 : opener 
+	<br>
+	<button type="button" onclick="winopen()"> 열기</button>
+	<div id="result1"></div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

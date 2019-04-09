@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+
+div {
+	border-radius: 20px;
+	width: 150px;
+	height: 60px;
+	border: 2px solid gray;
+	overflow: auto;
+	margin: 5px;
+	background: #ffffe6;
+	text-align: center;
+	font-size: 1.3em;
+}
+</style>
+
+<script type="text/javascript">
+	function proc1() {
+		// 배열변수를 선언한다 
+		arr = new Array(5);
+
+		for (i = 0; i < arr.length; i++) {
+			// 입력받는다 
+			arr[i] = prompt(i + "번째  입력");
+
+			for (k = 0; k < i - 1; k++) {
+				// 입력한 값과 배열의 k번째와 비교 
+				// 같은 값이면 k를 빠져나간다 
+				//  i값을 -1 한다 
+				if (arr[i] == arr[k]) {
+					i--;
+					break;
+				}
+			}
+		}
+		document.getElementById('result1').innerHTML = arr;
+
+	}
+
+	arr = new Array(5);
+	
+	function proc2() {
+		for (i = 0; i < arr.length; i++) {
+			while (true) {
+				tmp = prompt(i + "번째  입력");
+				if (tmp == "" || tmp == null) {
+					continue;
+				}
+				flag = false;
+				for (k = 0; k <= i - 1; k++) {
+					//비교
+					// 같은 값이면 k를 벗어나고 flag = true;
+					// 다시입력 받으러 간다 
+					if (tmp == arr[k]) {
+						flag = true;
+						break;
+					}
+				}
+				if (!flag) {
+					break;
+				}
+			}
+			arr[i] = tmp;
+			//i를 다시 수행 한다 
+		}
+		document.getElementById('result2').innerHTML = arr;
+
+	}
+	function proc3() {
+		var arr = new Array(); 
+		/* arr = [40, 100, 1, 5, 25]; */
+		for (i = 0; i < 5; i++) {
+			a = prompt(i+1  + "번째  입력");
+			if (arr.indexOf(a) != -1) {
+				i--;
+				// 배열에 같은 값이 있다
+				//i 를 -1 
+				//다시입력
+
+			} else {
+				// 배열에 같은 값이 없다
+				//입력받은 값을 배열의 마지막에 추가 
+				 arr.push(a);
+			}
+		}
+
+		document.getElementById('result3').innerHTML = arr;
+	}
+</script>
+</head>
+<body>
+	서로 중복되지 않은 정수 5개를 입력 받아 출력하는 프로그램을 작성하시오
+	<br>
+	<button type="button" onclick="proc1()">실행</button>
+	<br>
+	<div id="result1"></div>
+	<br> 서로 중복되지 않은 정수 5개를 입력 받아 출력하는 프로그램을 작성하시오
+	<br>
+	<button type="button" onclick="proc2()">실행</button>
+	<br>
+	<div id="result2"></div>
+	<br> 서로 중복되지 않은 정수 5개를 입력 받아 출력하는 프로그램을 작성하시오
+	<br>
+	<button type="button" onclick="proc3()">실행</button>
+	<br>
+	<div id="result3"></div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

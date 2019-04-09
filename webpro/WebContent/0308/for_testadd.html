@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function proc1() {
+		var sum = 0;
+
+		for (i = 0; i < 10; i++) {
+
+			sum += i;
+
+			str = "1부터~10까지의 합" + sum;
+
+		}
+		document.getElementById("result1").innerHTML = str;
+	}
+
+	function proc2() {
+		var sum = 0;
+
+		for (i = 1; i < 200; i++) {
+			if (i % 2 != 0)
+				continue;
+			sum += i;
+
+		}
+		str = "1부터~200까지 짝수의 합" + sum;
+
+		document.getElementById("result2").innerHTML = str;
+	}
+	function proc3() {
+
+		str = "";
+		sum = 0;
+		while (true) {
+			x = parseInt(prompt("숫자를 입력해주세요(*0이면 종료)", ""));
+			if (x == 0) {
+				break;
+			}
+			sum += x;
+			str += x + "/";
+		}
+
+		str += "합: " + sum;
+
+		document.getElementById("result3").innerHTML = str;
+	}
+	function proc4() {
+		var sum = 0;
+		var s = 0;
+		for (i = 1; i < 100; i++) {
+			if (sum >= 3000) {
+				str = i;
+				break;
+			}
+			sum += i;
+		}
+		str = "1부터~100까지 합(*3000이 넘어갈 경우 종료)  " + sum + "  종료" + i;
+
+		document.getElementById("result4").innerHTML = str;
+	}
+</script>
+<style type="text/css">
+div {
+	border: 2px solid black;
+	padding: 10px;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+</head>
+<body>
+	<h3>1부터 10까지의 합을 구하는 프로그램을 작성하시오.</h3>
+	<button id="but1" onclick="proc1()">실행</button>
+	<div id="result1"></div>
+	<hr color="black">
+	<h3>1부터 200까지의 짝수의 합을 구하는 프로그램을 작성하시오.(break나 continue를 이용)</h3>
+	<button id="but2" onclick="proc2()">실행</button>
+	<div id="result2"></div>
+	<hr color="black">
+	<h3>사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오.</h3>
+	<button id="but3" onclick="proc3()">실행</button>
+	<div id="result3"></div>
+
+	<hr color="black">
+	<h3>1부터 100까지의 합을 구하는데 합이 3000이상이면 종료</h3>
+	<button id="but4" onclick="proc4()">실행</button>
+	<div id="result4"></div>
+	<hr color="black">
+</body>
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

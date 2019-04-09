@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+
+div {
+	border-radius: 10px;
+	width: 50%;
+	height: 100px;
+	border: 2px solid gray;
+	overflow: auto;
+	margin: 5px;
+	background: #ffffe6;
+	text-align: center;
+	font-size: 1.6em;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		eleul = document.getElementsByTagName("ul")[0];
+		liall = eleul.getElementsByTagName("li");
+
+		for (i = 0; i < liall.length; i++) {
+			// alert(liall[i].firstChild.data);
+		}
+	}
+	function proc1() {
+		domul = document.getElementsByTagName("ul")[1];
+		domlist = domul.getElementsByTagName("li");
+
+		for (i = 0; i < domlist.length; i++) {
+			vimg = domlist[i].firstChild.data;
+			imgele = document.createElement("img");
+			imgele.src = "../images/" + vimg + ".jpg"
+			imgele.width = 200;
+			imgele.heigth = 200;
+			domlist[i].appendChild(imgele);
+
+		}
+	}
+	function proc2(ele) {
+		// ele : 클릭한 리스트 객체 
+
+		vimg = ele.firstChild.data;
+		imgele = document.createElement("img");
+		imgele.src = "../images/" + vimg + ".jpg"
+		imgele.width = 100;
+		imgele.heigth = 100;
+		ele.appendChild(imgele);
+	}
+	function proc3(text) {
+		node = document.createTextNode(text);
+		document.getElementById("target").appendChild(node);
+	}
+	function proc4() {
+		arr = [ "바이", "잘가", "조심히들어가고", "내일봐" ];
+		idx = Math.floor(Math.random() * arr.length);
+		// p태그를 생성
+		ptag = document.createElement("p");
+		// textNode를 생성 
+		textNode = document.createTextNode(arr[idx]);
+		// textNode를 p 태그에 추가 
+		ptag.appendChild(textNode);
+		// p 태그를 div에 추가 
+		document.getElementById("d1").appendChild(ptag);
+
+	}
+	function delete1() {
+		//id 가 d1 인 요소에 접근해서 
+		parent = document.getElementById("d1");
+		// 마지막 자식을 찾는다 
+		child = parent.lastChild;
+		// 삭제
+		parent.removeChild(child);
+	}
+	function srcproc() {
+		imgarr = ["나루토", "짱아", "사스케", "철수", "사쿠라", "훈이", "이타치"];
+		idx = Math.floor(Math.random() * imgarr.length);
+		document.getElementById("img1").src ="../images/" + imgarr[idx] + ".jpg";	
+	}
+	
+	function switchproc() {
+	imgele = document.getElementById("swimg");
+		alert(imgele.src.match("Chrysanthemum"));
+		
+		if(imgele.src.match("Chrysanthemum.jpg")){
+			imgele.src = "../images/Tulips.jpg";
+		} else {
+			imgele.src = "../images/Chrysanthemum.jpg";
+		}
+	}
+</script>
+</head>
+<body>
+
+	<ul>
+		<li>한정환</li>
+		<li>정지후</li>
+		<li>김재권</li>
+		<li>송진원</li>
+		<li>정수영</li>
+		<li>전성희고객님</li>
+	</ul>
+	
+	<hr color="black">
+	
+	<p>버튼은 클릭하면 이미지를 표시한다</p>
+	<br>
+	<button type="button" onclick="proc1()">실행</button>
+	<ul>
+		<li>짱구</li>
+		<li>훈이</li>
+		<li>철수</li>
+		<li>맹구</li>
+		<li>짱아</li>
+	</ul>
+
+	<hr color="black">
+	
+	<p>각리스트를 클릭하면 이미지를 표시</p>
+	<ul>
+		<li onclick="proc2(this)">짱구</li>
+		<li onclick="proc2(this)">훈이</li>
+		<li onclick="proc2(this)">철수</li>
+		<li onclick="proc2(this)">맹구</li>
+		<li onclick="proc2(this)">짱아</li>
+	</ul>
+	<hr color="black">
+	<div onclick="proc3('안녕')">
+		클릭하세요 <span id="target"> </span>
+	</div>
+
+	<hr color="black">
+	
+	<p>클릭하세요를 클릭하면 P태그를 생성하고 P태그 안에 문자를 표시</p>
+	<button type="button" onclick="delete1()">삭제</button>
+	<div id="d1" onclick="proc4()">클릭하세요</div>
+
+	<hr color="black">
+	
+	<p>버튼을 클릭하면 이미지를 변경 -src속성변경</p>
+	<button type="button" onclick="srcproc()">변경</button>
+	<img id ="img1" src="../images/맹구.jpg">
+	<br>
+	
+	<hr color="black">
+	
+	<p>이미지를 클릭하세요 </p>
+	img의 src를 얻어오면 전체경로가 표시된다
+	<br>
+	src의 값을 비교 할 때는 == 로 할 수 없고 
+		<br>
+	match() 함수를 이용해서 비교하여 얻어 온다
+		<br>
+	<img onclick="switchproc()" id ="swimg" src="../images/Chrysanthemum.jpg">
+	<br>
+	<hr color="black">
+	
+	
+	<img  src="../images/보.jpg">
+	<img src="../images/가위.jpg">
+	<img  src="../images/주먹.jpg">
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

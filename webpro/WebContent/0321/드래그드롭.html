@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div, textarea {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body { //
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+	text-align: center;
+}
+
+div {
+	background-image: url(../images/이쁜사진2.jpg);
+	border-radius: 10px;
+	width: 50%;
+	height: 500px;
+	border: 2px solid #8A0868;
+	overflow: auto;
+	margin: 5px;
+	text-align: center;
+	font-size: 1.8em;
+	margin-left: 25%;
+}
+
+#shopping_cart {
+	width: 450px;
+	height: 100px;
+	padding: 10px;
+	border: 2px solid #8A0868;
+}
+</style>
+<script type="text/javascript">
+	function allowDrop(e) {
+		e.preventDefault(); //preventDefault 는 기본 정의 이벤트의 동작을 막아준다 
+	}
+
+	function handleDragStart(e) {
+		//alert(e.target.id);
+		e.dataTransfer.effectAllowed = 'move';
+		e.dataTransfer.setData("Text", e.target.id);
+	}
+
+	function handleDrop(e) {
+		e.preventDefault();
+		src = e.dataTransfer.getData("Text");
+		// 이미지위에 다른 이미지를 drop라면 이미지가 가려지게 된다
+		// 이를 방지 하기 위해서 
+		// 태그이름을 활용해서 사라지지 않게 할 수 있다 
+		// e.target.tagName 을 div로 바꾸어 준다
+		//alert(e.target.tagName);
+		if (e.target.tagName == "IMG") {
+			e.target.parentNode.appendChild(document.getElementById(src));
+		} else {
+			e.target.appendChild(document.getElementById(src));
+		}
+	}
+	function goPage() {
+		event.preventDefault();
+		// 원래 고유의  이벤트 내용을 실행하지 않도록 위한 메소드
+	}
+</script>
+</head>
+<body ondrop="handleDrop(event)" ondragover="allowDrop(event)">
+	<a href="http://ww.naver.com" onclick="goPage()"> 네이버</a>
+	<p>원하는 물건을 끌어서 옮기세요.</p>
+	<div id="shopping_cart" ondrop="handleDrop(event)"
+		ondragover="allowDrop(event)"></div>
+	<br>
+	<img id="Img1" src="../images/짱구.jpg" draggable="true"
+		ondragstart="handleDragStart(event)" ondragover="dragOver(event)"
+		width="150" height="100">
+	<img id="Img2" src="../images/맹구.jpg" draggable="true"
+		ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="Img3" src="../images/짱아.jpg" draggable="true"
+		ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="Img4" src="../images/철수.jpg" draggable="true"
+		ondragstart="handleDragStart(event)" width="150" height="100">
+	<img id="Img5" src="../images/훈이.jpg" draggable="true"
+		ondragstart="handleDragStart(event)" width="150" height="100">
+
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

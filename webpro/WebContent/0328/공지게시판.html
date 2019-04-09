@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+	.accordion{
+		background: #F781D8;
+		padding: 12px;
+		width:  100%;
+		border: 2px solid #8A0868;
+	}
+	.accordion:HOVER{
+		background: #ffffcc;
+	}
+	body {
+	background-image: url(../images/이쁜사진2.jpg);
+	border-radius: 10px;
+	overflow: auto;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	font-size: 1.3em;
+	padding-top: 5px;
+	width: 150px;
+	height: 245px;
+	display: inline-block;
+	}
+	.pinfo{
+		width:  80%;
+		float: left;
+	}
+	.pbutton {
+		text-align:  right;
+	}
+	
+	
+</style>
+<script type="text/javascript">
+
+
+	
+	
+	
+</script>
+</head>
+<body>
+
+<div class="container">
+  <h2>공지게시판</h2>
+ 	<br>
+ 	
+ 	<br>
+ 	<br>
+  <div class="panel-group" id="parent">
+    <div class="panel panel-default">
+    
+	<div class="panel-heading"> 
+      
+        <h4 class="panel-title">
+   <!--        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+    -->     
+     <button class="accordion" data-toggle="collapse" data-parent="#parent" href="#collapse1">안녕하세요</button>
+    
+    </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+        <p class ="pinfo" > 작성자 : 관리자 
+        	작성일 : 2019.03.26
+        	조회수 : 1564684123165
+        </p>
+        <p class ="pbutton"> 
+        
+        
+        </p>
+     <hr color="black">
+        <p class = "pinfo"> 내용</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+     <button class="accordion" data-toggle="collapse" data-parent="#parent" href="#collapse2">반갑습니다</button>
+
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse ">
+        <div class="panel-body">
+             <p class ="pinfo" > 작성자 : 관리자 
+        	작성일 : 2019.03.26
+        	조회수 : 1564684123165
+        </p>
+        
+         <p class ="pbutton"> 
+        	
+        	
+        </p>
+
+        <p class ="pinfo" > 내용</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+       <button class="accordion" data-toggle="collapse" data-parent="#parent" href="#collapse3">안녕히가세요</button>
+   	    
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+              <p class ="pinfo" > 작성자 : 관리자 
+        	작성일 : 2019.03.26
+        	조회수 : 1564684123165
+        </p>
+         <p class ="pbutton"> 
+        	
+        	
+        </p>
+        <p class ="pinfo" > 내용</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+  
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

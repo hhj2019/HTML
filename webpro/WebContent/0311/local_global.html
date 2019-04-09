@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var sum = 0;
+	// 전역변수
+	/* function add(a, b) {
+		sum = a + b; 
+		
+	}
+	function sub(a, b) {
+		sum = a - b;
+	} */
+	
+	
+/* 	window.onload = function () {
+		add (4, 5); 
+		document.write("add(4, 5) ="  + sum);
+		
+		sub(10, 6); 
+		document.write("sub(10, 6) =" + sum);
+		
+	}  */
+	// 지역변수 - 오류 발생
+/* 	function add(a, b) {
+		var	 sum = a + b; 
+		
+	}
+	function sub(a, b) {
+		var sum = a - b;
+		
+	}
+	
+	window.onload = function () {
+		// sum 변수가 지역변수이기 때문에 오류 발생
+		add (4, 5); 
+		document.write("add(4, 5) ="  + sum);
+		
+		sub(10, 6); 
+		document.write("sub(10, 6) =" + sum);
+		
+	}  */
+	
+	function add(a, b) {
+		var	 sum = a + b; 
+		return sum;
+		
+	}
+	function sub(a, b) {
+		var sum = a - b;
+		return sum;
+	}
+	
+	window.onload = function () {
+		// sum 변수가 지역변수이기에 직접 사용하면 오류 발생
+		// 사용하려면 리턴을 받아서 사용한다
+		
+		sum = add (4, 5); 
+		document.write("add(4, 5) ="  +sum + "<br>");
+		
+		sum =sub(10, 6); 
+		document.write("sub(10, 6) =" + sum);
+		
+	}  
+</script>
+</head>
+<body>
+
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+ var str = ["벚꽃","개나리","진달래","유채꽃","목련","무궁화","벚꽃"]
+ points = [40, 100, 1, 5, 25, 10];
+ 
+ function indexpro(){
+	 vname = prompt("이름을 입력하세요");
+	 idx = str.indexOf(vname);
+	 res = "입력한 이름: " + vname + "<br>";
+	 res += vname + "님은 " + idx + "번째에 있습니다.";
+	 
+	 document.getElementById('result1').innerHTML = res;
+ }
+ 
+ function lastpro(){
+	 vname = prompt("이름을 입력하세요");
+	 idx = str.lastIndexOf(vname);
+	 res = "입력한 이름: " + vname + "<br>";
+	 res += vname + "님은 " + idx + "번째에 있습니다.";
+	 
+	 document.getElementById('result1').innerHTML = res;
+ }
+ 
+ function pushpro(){
+	 vname = prompt("추가할 이름을 입력하세요");
+	 str.push(vname);
+	 res = "추가한 이름 : " + vname + "<br>";
+	 res += "추가한 후: " + str
+	 document.getElementById('result2').innerHTML = res;
+ }
+ 
+ function poppro(){
+	 vname = str.pop();
+	 
+	 res = "꺼낸 이름 : " + vname + "<br>"
+	 res += "삭제된 후: " + str
+	 document.getElementById('result2').innerHTML = res;
+ }
+ 
+ function sortpro(){
+	 //points = [40, 100, 1, 5, 25, 10];
+	 res = "원래 값 : " + points + "<br>"
+	 
+	 points.sort();
+	 res += "바뀐 값 : " + points + "<br>"
+	 
+	 document.getElementById('result3').innerHTML = res;
+ }
+ 
+ function sortapro(){
+	 res = "<h4>배열 오름차순 정렬</h4>";
+	// points = [40, 100, 1, 5, 25, 10];
+	 res += "원래 값 : " + points + "<br>";
+	 points.sort(function(a, b) {return a - b})
+	 res += "바뀐 값 : " + points + "<br>";
+	 
+	 document.getElementById('result3').innerHTML = res;
+ }
+ 
+ function sortdpro(){
+	 res = "<h4>배열 내림차순 정렬</h4>";
+	// points = [40, 100, 1, 5, 25, 10];
+	 res += "원래 값 : " + points + "<br>";
+	 points.sort(function(a, b) {return b - a});
+	 res += "바뀐 값 : " + points + "<br>";
+	 
+	 document.getElementById('result3').innerHTML = res;
+ }
+ 
+ function reversepro(){
+	 res = "<h4>배열 뒤집기</h4>";
+	 res += "원래 값 : " + str + "<br>";
+	 str.reverse();
+	 res += "바뀐 값 : " + str + "<br>";
+	 document.getElementById('result3').innerHTML = res;
+ }
+ 
+ function slicepro(){
+	 ss = str.slice(1, 4);
+	 
+	 res = "<h4>배열 요소 자르기</h4>";
+	 res += "원래 배열: " + str + "<br>";
+	 res += "slice한 배열(1, 4): " + ss + "<br>";
+	 document.getElementById('result4').innerHTML = res;
+ }
+ 
+ function concatpro(){
+	 aa = str.concat(points); // 두개의 배열을 결합해서 한개의 배열로.
+	 res = "<h4>배열결합 - 두 개의 배열을 한개의 배열로 결합</h4>";
+	 res +="str: " + str + "<br>";
+	 res +="points: " + points + "<br><br>";
+	 res += ">>결합결과: " + aa + "<br>";
+	 document.getElementById('result4').innerHTML = res;
+ }
+ 
+ function joinpro(){
+//	 aa = str.join(); //배열을 문자열로 변환, 배열이 아닌게 된다
+	 
+// 	 alert(str.length + ", " + aa.length);
+	 
+	/*  res = "배열의 값 <br>";
+	 for(i=0; i<str.length; i++){
+		 res +=i + "번째: " + str[i] + "<br>"
+	 }
+	 
+// 	 aa = "벚꽃,개나리,진달래,유채꽃,목련,무궁화,벚꽃"
+	 res += "배열의 join(string)값 <br>";
+	 for(i=0; i<aa.length; i++){
+		 res +=i + "번째: " + aa[i] + "<br>"
+	 }
+	  */
+	  
+	 aa = str.join("/"); //문자와 문자 사이의 구분자
+	 //aa = str.join(); //구분자를 지정하지 않으면 ','로 구분 >> 벚꽃,개나리,...
+	 document.getElementById('result4').innerHTML = aa;
+	 
+ }
+	 
+
+</script>
+<style>
+	div{
+		width : 700px;
+		height : auto;
+		margin : 10px;
+		padding : 10px;
+		border : 2px solid gray;
+		background: #ffffe6;
+	}
+	body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+</head>
+<body>
+str = ["벚꽃","개나리,","진달래","유채꽃","목련","무궁화","벚꽃"] <br>
+이름을 입력받아 위치값 알아내기<br><br>
+<button type="button" onclick="indexpro()">indexof</button>
+<button type="button" onclick ="lastpro()">lastindexof</button>
+<div id="result1"></div>
+
+<button type="button" onclick="pushpro()">push</button>
+<button type="button" onclick="poppro()">pop</button>
+<div id="result2"></div>
+<br><br>
+ascending : 오름차순 (작은 -> 큰) <br>
+descending : 내림차순 (큰 -> 작은)<br><br>
+<button type="button" onclick="sortpro()">sort</button>
+<button type="button" onclick="sortapro()">sort 오름차순</button>
+<button type="button" onclick="sortdpro()">sort 내림차순</button>
+<button type="button" onclick="reversepro()">reverse</button>
+<div id="result3"></div>
+
+<br><br>
+<button type="button" onclick="slicepro()">slice</button>
+<button type="button" onclick="concatpro()">concat</button>
+<button type="button" onclick="joinpro()">join</button>
+<div id="result4"></div>
+
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

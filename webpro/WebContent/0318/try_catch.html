@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+
+div {
+	border-radius: 10px;
+	width: 50%;
+	height: 100px;
+	border: 2px solid gray;
+	overflow: auto;
+	margin: 5px;
+	background: #ffffe6;
+	text-align: center;
+	font-size: 1.6em;
+}
+</style>
+<script type="text/javascript">
+	// 두개의 수를 입력받아서 나누기를 한다
+	// 두번째 수가 0 이면 오류
+	try {
+
+		su1 = prompt("첫번째 수를 입력 하세요 : ", " ");
+		su2 = prompt("두번째 수를 입력 하세요 : ", " ");
+
+		res = su1 / su2;
+		//alert(res.toFixed(3));
+		document.write(res.toFixed(3));
+	} catch (err) {
+		msg = "오류발생 : " + err.message;
+		alert(msg);
+	}
+
+	//document.getElementById("result1").innerHTML = res;
+</script>
+</head>
+<body>
+
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

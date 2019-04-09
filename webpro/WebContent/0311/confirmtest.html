@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+		while(true){
+			a = prompt("수를 입력하세요", 0);
+			str = "**" + a + "단**<br>";
+
+			for (i = 1; i <= 9; i++) {
+				str += a + "*" + i + "=" + a * i + "<br>";
+			}
+			document.getElementById("result1").innerHTML += str;
+			cont = confirm("계속하시겠습니까?");
+			if(!cont) {
+				break;
+			}
+		}
+	}
+		function proc2() {
+			while(true){
+				a = prompt("수를 입력하세요", 0);
+				str = a +"<br>";
+				
+				if (a % 2 ==0) {
+					str += "짝짝짝" + "<br>";
+				} else {
+					str += "홀홀홀" +  "<br>";
+				}
+				
+				document.getElementById("result2").innerHTML += str;
+				cont = confirm("계속하시겠습니까?");
+				if(!cont) {
+					break;
+				}
+			}
+	}
+</script>
+
+
+</head>
+<body>
+	버튼을 클릭하면 수를 입력 받아서 구구단 출력
+	<br> go & stop 을 입력받아 수행한다
+	<br>
+	<input type="button" value="확인" onclick="proc1()">
+	<br>
+	<div id="result1"></div>
+	<br>
+	<hr color="black">
+	버튼을 클릭하면 수를 입력받아서 짝수인지 홀수인지 출력 
+	<br> go & stop 을 입력받아 수행한다
+	<br>
+	<input type="button" value="확인" onclick="proc2()">
+	<br>
+	<div id="result2"></div>
+	<br>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

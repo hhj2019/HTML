@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type="text/css"  rel = "stylesheet"  href = "../css/mycss.css">
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+div {
+	height: auto;
+	padding: 10px;
+	border: 2px solid black;
+}
+</style>
+
+<script>
+function proc1() {
+	
+	 fruits = ["apple", "banana", "peach"];
+	
+	result = document.getElementById("result1");
+	print(result);
+}
+function proc2() {
+	
+	 fruits = new Array("apple","banana","orange");
+	
+	 result = document.getElementById("result2");
+	 print(result);
+}
+function proc3() {
+	
+	  fruits = new Array();
+	   fruits[0] = "Apple";
+	   fruits[1] = "Banana";
+	   fruits[2] = "Orange";
+	
+	   result = document.getElementById("result3");
+	   print(result); //함수호출, 파라미터로 result를 보냄 
+}
+function print(a) {  // a : 매개변수, 함수호출시 파라미터로 넘겨지는 값을 받는 변수다 이말이야 
+	str ="";
+	 for (i = 0; i < fruits.length; i++) {
+		 	str += i + "번째" + fruits[i] + "<br>";
+		 }
+	 a.innerHTML = str;
+}
+</script>
+
+</head>
+<body>
+<pre>Array 배열
+1. 리터럴로 직접생성
+   var fruits = ["apple", "banana", "peach"];
+2. Array 객체로 배열 생성
+   var fruits = new Array("apple","banana","orange");
+   var fruits = new Array(3);
+   fruits[0] = "Apple";
+   fruits[1] = "Banana";
+   fruits[2] = "Orange";</pre>
+		
+
+	<button id ="but1" onclick="proc1()"> array1- 리터럴</button>
+	<div id="result1"> </div>
+	<hr color ="black">
+	<button id ="but2" onclick="proc2()"> array2- 객체로 배열 생성</button>
+	<div id="result2"> </div>
+	<hr color ="black">
+	<button id ="but3" onclick="proc3()"> array3- 객체로 배열 생성</button>
+	<div id="result3"> </div>
+	<hr color ="black">
+</body>
+
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

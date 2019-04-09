@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 300px;
+	height: 100px;
+	border: 2px solid black;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+<script type="text/javascript">
+	var su1 = 0;
+	var su2 = 0;
+
+	function procadd() {
+		su1 = document.getElementById("su1").value;
+		su2 = document.getElementById("su2").value;
+
+		add = parseInt(su1) + parseInt(su2)
+
+		document.getElementById("result1").innerHTML = add;
+	}
+	function procsub() {
+		su1 = document.getElementById("su1").value;
+		su2 = document.getElementById("su2").value;
+
+		sub = su1 - su2
+
+		document.getElementById("result1").innerHTML = sub;
+	}
+	function procmulti() {
+		su1 = document.getElementById("su1").value;
+		su2 = document.getElementById("su2").value;
+
+		multi = su1 * su2
+
+		document.getElementById("result1").innerHTML = multi;
+	}
+	function procdivide() {
+		su1 = document.getElementById("su1").value;
+		su2 = document.getElementById("su2").value;
+
+		divide = su1 / su2
+
+		document.getElementById("result1").innerHTML = divide;
+	}
+</script>
+</head>
+<body>
+	첫번째 :
+	<input type="text" id="su1">
+	<br> 두번째 :
+	<input type="text" id="su2">
+	<br>
+	<input type="button" value="+" onclick="procadd()">
+	<br>
+	<input type="button" value="-" onclick="procsub()">
+	<br>
+	<input type="button" value="*" onclick="procmulti()">
+	<br>
+	<input type="button" value="/" onclick="procdivide()">
+	<br>
+	<div id="result1"></div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

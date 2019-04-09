@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="../css/mycss.css">
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+
+
+<script>
+	var fruits; 
+	var result;
+	var a1= 100;
+	var b1 = 200;
+	// a1, b1 변수는 var이 있거나 없거나 전역변수이다
+	// a1, b1 변수는 모든 함수에서 접근하고 사용할 수 있다
+	// 전역변수이다 
+	//function안에 선언할 때 생각하고 하자
+	
+	function proc1() {
+
+		fruits = [ "apple", "banana", "peach" ];
+
+		result = document.getElementById("result1");
+		a1 = a1 + 100;
+		print();
+		// 호출되는 print 함수에서도  fruits과 result라는 변수에 
+		// 접급하고 사용할 수있다
+	}
+	function proc2() {
+
+		 fruits = new Array("apple", "banana", "orange");
+
+ 		 result = document.getElementById("result2");
+ 		b1 =b1 +200;
+		print();
+	
+	}
+	function proc3() {
+
+		fruits = new Array();
+		fruits[0] = "방콕";
+		fruits[1] = "베트남";
+		fruits[2] = "싱가폴";
+		fruits[3] = "프랑스";
+		fruits[4] = "스웨덴";
+
+		result = document.getElementById("result3");
+		a1 +=100;  b1+=100;
+		print(); //함수호출, 파라미터로 result를 보냄 
+	}
+	function print(a) { // a, b : 매개변수,
+		// 함수호출시 파라미터로 넘겨지는 값을 받는 변수다 이말이야
+		// a = fruits 
+		// b = result
+		str = "";
+		for (i = 0; i < fruits.length; i++) {
+			str += i + "번째" + fruits[i] + "<br>";
+		}
+		result.innerHTML = str;
+		result.innerHTML += "a=" + a1 + "b=" + b1;
+	}
+</script>
+
+</head>
+<body>
+<pre>
+function 안에서 선언한 변수중 변수앞에 var 없이 선언된 변수 /
+function이 코딩되기 전에 선언한 변수 - var 이 있거나 없거나 전역 변수이다 
+전역변수는 모든 영역에서 접근하고 사용가능하다
+</pre>
+
+
+	<button id="but1" onclick="proc1()">array1- 리터럴</button>
+	<div id="result1"></div>
+	<hr color="black">
+	<button id="but2" onclick="proc2()">array2- 객체로 배열 생성</button>
+	<div id="result2"></div>
+	<hr color="black">
+	<button id="but3" onclick="proc3()">array3- 객체로 배열 생성</button>
+	<div id="result3"></div>
+	<hr color="black">
+</body>
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

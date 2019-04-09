@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sub window</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+
+div {
+	border-radius: 10px;
+	width: 50%;
+	height: 100px;
+	border: 2px solid gray;
+	overflow: auto;
+	margin: 5px;
+	background: #ffffe6;
+	text-align: center;
+	font-size: 1.6em;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+		//document.getElementById("name")
+		//document.getElementsByName("name")[0]
+		namevalue = document.ff.name .value;
+		telvalue = document.ff.tel.value;
+		
+		opener.document.getElementById("result1").innerHTML  = "이름 : " + namevalue + "<br>" + "전화번호 : " + telvalue;
+		
+		window.close();
+	}
+</script>
+</head>
+<body>
+	실행버튼을 클릭하면 이름과 전화번호를 입력받아서 부모창으로 보낸다
+	<br>
+	<h1>안녕하세요 반갑습니다</h1>
+	<form name="ff">
+이름: 		<input type="text" id="name" name="name"> 
+<br> 
+전화번호: <input type="text" id="tel" name="tel"> 
+<br>
+		<button type="button" onclick="proc1()">실행</button>
+	</form>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

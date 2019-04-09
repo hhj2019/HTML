@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css"> 
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+
+div { //
+	border-radius: 20px;
+	width: 300px;
+	height: 30px;
+	border: 2px solid gray;
+	overflow: auto;
+	margin: 5px;
+	background: #ffffe6;
+	text-align: center;
+	font-size: 1.3em;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+		today = new Date();
+		//time = today.getTime() + 500일의 millesec
+		time = today.getTime() + 24 * 60 * 60 * 1000 * 500;
+		// 새롭게 Date 객체를 생성하거나 setTime()를 이용해서 변경 
+		newday = new Date(time);
+
+		newday = newday.toLocaleString();
+
+		document.getElementById('result1').innerHTML = newday + "<br>";
+	}
+	window.onload = function() {
+		setInterval(function() {
+			today = new Date();
+			date = today.toLocaleDateString();
+			time = today.toLocaleTimeString();
+
+			document.getElementById('now').innerHTML = date + time;
+		}, 1000)
+	}
+</script>
+</head>
+<body>
+
+	
+	현재시간 :
+	<span id="now"> </span>
+	<br> 500일 후 계산하기
+	<br>
+	<button id ="btn-1" type="button" onclick="proc1()">실행</button>
+	<br>
+	<div id="result1"></div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

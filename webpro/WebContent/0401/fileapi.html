@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 350px;
+	height: 100px;
+	padding: 10px;
+	border: 1px solid #8A0868;
+}
+
+img {
+	width: 300px;
+	height: 300px;
+	display: none;
+}
+</style>
+<script type="text/javascript">
+	function readFile() {
+		// id가 file인 곳으로 접근 파일목록을 가져온다 
+		// file 객체로 리턴한다 
+		file = document.getElementById("file").files[0];
+		res = "파일명" + file.name + "<br>";
+		res += "파일크기" + file.size + "<br>";
+		res += "파일종류" + file.type + "<br>";
+		res += "변경날짜" + file.lastModifyDate + "<br>";
+		
+		document.getElementById("info").innerHTML = res;
+		reader = new FileReader();
+		//reader.readAsText(file);
+		reader.readAsDataURL(file);
+		
+		reader.onload = function() {
+			content=	document.getElementById("content");
+			image = document.getElementById("imgview");
+			content.value = reader.result;
+			
+			if(reader.result.match("image")){
+				image.src = reader.result;
+				image.style.display = "block";
+			} else {
+				image.style.display = "none";
+			}
+		}
+
+	}
+</script>
+</head>
+<body>
+	<br> File객체 : 파일의 기본적인 정보를 얻는다.
+	<br> - 파일명(name), 파일크기(size), 파일종류(type), 변경날짜(lastModifyDate)
+	<br> FileReader객체 : 파일의 내용을 읽을 수 있는 기능을 제공한다
+	<br> 메소드 : readAsText(file객체, 인코딩) : 파일을 읽어서 텍스트로 변환
+	<br> readAsDataUrl(file 객체) : 파일의 읽어서 dataUrl 형식의 문저열을 반환한다
+	<br> 속성 : result : 읽어온 파일의 내용이 저장되어 있다
+	<br> error : 오류가 발생 했을 때 오류정보가 저장 되어있다
+	<br>
+	<h1>HTML5 File API</h1>
+	<input type="file" id="file">
+	<input type="button" value="읽기" onclick="readFile()">
+	<br>
+	<h4>결과출력</h4>
+	<textarea id="content" rows="10" cols="50"></textarea>
+	<br>
+	<h2>파일정보</h2>
+	이미지 파일을 읽은 경우에 이미지가 표시 된다
+	<br> 다른 파일을 읽었을 경우 이미지가 표시 되지 않는다
+	<br>
+	<br>
+	<img id="imgview" src="../images/떡볶이.jpg">
+	<br>
+	<div id="info"></div>
+</body>
+</html>

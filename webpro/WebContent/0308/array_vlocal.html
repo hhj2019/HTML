@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="../css/mycss.css">
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+
+
+<script>
+	function proc1() {
+
+		 var fruits = [ "apple", "banana", "peach" ];
+
+		var result = document.getElementById("result1");
+		print(fruits, result);
+		//  fruits와 result 변수가 지역변수 이고 현재 함수내에서만 사용가능 
+		// print 함수내에서 지역변술르 사용하고자 한다면 
+		// print 함수 호출시 파라미터로 2개의 변수를 보내야 한다 
+	}
+	function proc2() {
+
+		var fruits = new Array("apple", "banana", "orange");
+
+ 		var result = document.getElementById("result2");
+		print(fruits, result);
+	}
+	function proc3() {
+
+		var fruits = new Array();
+		fruits[0] = "방콕";
+		fruits[1] = "베트남";
+		fruits[2] = "싱가폴";
+		fruits[3] = "프랑스";
+		fruits[4] = "스웨덴";
+
+		var result = document.getElementById("result3");
+		print(fruits, result); //함수호출, 파라미터로 result를 보냄 
+	}
+	function print(a, b) { // a, b : 매개변수,
+		// 함수호출시 파라미터로 넘겨지는 값을 받는 변수다 이말이야
+		// a = fruits 
+		// b = result
+		str = "";
+		for (i = 0; i < a.length; i++) {
+			str += i + "번째" + a[i] + "<br>";
+		}
+		b.innerHTML = str;
+	}
+</script>
+
+</head>
+<body>
+	<pre>
+function 안에서 선언하고 선언된 function에서만 사용가능 한 변수
+선언시 변수앞에 var을 붙이면 지역변수가 된다  
+function print(a, b) { // a, b : 매개변수,
+함수호출시 파라미터로 넘겨지는 값을 받는 변수다 이말이야
+ a = fruits 
+ b = result	
+</pre>
+
+
+	<button id="but1" onclick="proc1()">array1- 리터럴</button>
+	<div id="result1"></div>
+	<hr color="black">
+	<button id="but2" onclick="proc2()">array2- 객체로 배열 생성</button>
+	<div id="result2"></div>
+	<hr color="black">
+	<button id="but3" onclick="proc3()">array3- 객체로 배열 생성</button>
+	<div id="result3"></div>
+	<hr color="black">
+</body>
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

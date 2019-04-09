@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if_ test1</title>
+<script type="text/javascript">
+	function pro1() {
+		// 입력받기 
+		var x;
+		x = prompt("숫자를 입력하세요");
+		res = "";
+		if (x > 60)
+			res = "합격입니다";
+		else
+			res = "불합격입니다";
+		str = "입력받은 값 : " + x + "<br>";
+		str += "결과 :" + res;
+		document.getElementById('result1').innerHTML = str;
+
+	}
+	function pro2() {
+		// 입력받기 
+		var y;
+		y = prompt("숫자를 입력하세요");
+		ress = "";
+		if (y % 2 == 0)
+			ress = "짝수";
+		else
+			ress = "홀수";
+		strr = "입력받은 값 : " + y + "<br>";
+		strr += "결과 :" + ress;
+		document.getElementById('result2').innerHTML = strr;
+
+	}
+	function pro3() {
+		// 입력받기 
+		var z;
+		z = prompt("1부터 100사이의 숫자를 입력하세요");
+		ress = "";
+		
+		y =  parseInt(z / 10);
+		
+		switch(y) {
+		case  10: 
+			ress = "만점";
+			break;
+		case  9: 
+			ress = "수";
+			break;
+		case  8: 
+			ress = "우";
+			break;
+		case  7: 
+			ress = "미";
+			break;
+		case  6: 
+			ress = "양";
+			break;
+		case  5: 
+			ress = "가";
+			break;
+		case  4: case  3: case  2: case  1: 
+			ress = "F";
+			break;
+			default : 
+				ress = "장난하지마"
+
+		
+		}
+		/* if (z >= 90)
+			ress = "수";
+		else if (z >= 80)
+			ress = "우";
+		else if (z >= 70)
+			ress = "미";
+		else if (z >= 60)
+			ress = "양";
+		else if (z >= 50)
+			ress = "가";
+		else
+			ress = "F"; */
+		strr = "입력받은 값 : " + z + "<br>";
+		strr += "결과 :" + ress;
+		document.getElementById('result3').innerHTML = strr;
+
+	}
+	function pro4() {
+		// 입력받기 
+		var x = new Array(5);
+		var sum;
+		var str = "";
+		for (var i = 0; i < x.length; i++) {
+			x[i] = parseInt(prompt((i + 1) + "번째 수 입력"));
+			sum += x[i];
+			str += x[i] + "&nbsp";
+		}
+		 avg = sum / 5;
+		var flag = true;
+		for (var i = 0; i < x.length; i++) {
+			if (x[i] < 60) {
+				flag = false;
+			}
+			if (flag == true) {
+				res = "합격";
+			} else {
+				res = "불합격";
+			}
+		}
+			str +="<br>" + res;
+			document.getElementById('result4').innerHTML = str;
+		/* 	z = prompt("과목별 점수를 입력해주세요1");
+			z = parseInt(z);
+			x = prompt("과목별 점수를 입력해주세요2");
+			x = parseInt(x);
+			c = prompt("과목별 점수를 입력해주세요3");
+			c = parseInt(c);
+			v = prompt("과목별 점수를 입력해주세요4");
+			v = parseInt(v);
+			b = prompt("과목별 점수를 입력해주세요5");
+			b = parseInt(b);
+			min = max = (z + x + c + v + b) / 5;
+			res = "";
+
+			if (z >= 60 && x >= 60 && c >= 60 && v >= 60 && b >= 60)
+				res = "합격입니다";
+			else
+				res = "불합격입니다";
+			str = "평균 : " + max + "<br>";
+			str += "결과 :" + res;
+			document.getElementById('result4').innerHTML = str; */
+
+	}
+	function pro5() {
+		// 입력받기 
+		z = prompt("숫자1");
+		//  z = parseInt(z);
+		x = prompt("숫자2");
+		// x = parseInt(x);
+		res = "";
+
+		if (z > x)
+			res = "숫자1이 더커요 ";
+		else
+			res = "숫자2가 더커요";
+
+		str = "입력받은 값 : " + z + "/" + x + "<br>";
+
+		str += "결과 :" + res;
+
+		document.getElementById('result5').innerHTML = str;
+
+	}
+	function pro6() { 
+		z = parseInt((prompt)("숫자1"));
+		y =prompt("연산자를 쓰시오(+, -, *, /, %)");
+		x = parseInt((prompt)("숫자2"));
+		
+		switch(y) {
+		case "+" :
+			res = z + x;
+			break;
+		case "-" :
+			res = z - x;
+			break;
+		case "*" :
+			res = z * x;
+			break;
+		case "/" :
+			res = z / x;
+			break;
+		case "%" :
+			res = z % x;
+			break;
+		}
+		str = z + y +x + "=" +res;
+	/* 	if (y == "+") {	
+			str = "입력받은 값 : " + z + "+" + x + "<br>";
+			str += "결과 :" + (z+x);
+			document.getElementById('result6').innerHTML = str;
+		} else if (y == "-"){
+			str = "입력받은 값 : " + z + "-" + x + "<br>";
+			str += "결과 :" + (z-x);
+			document.getElementById('result6').innerHTML = str;
+		} else if (y== "*") {
+			str = "입력받은 값 : " + z + "*" + x + "<br>";
+			str += "결과 :" + (z*x);
+			document.getElementById('result6').innerHTML = str;
+		} else if (y== "/") {
+			str = "입력받은 값 : " + z + "/" + x + "<br>";
+			str += "결과 :" + (z/x);
+			document.getElementById('result6').innerHTML = str;
+		} else if (y== "%") {
+			str = "입력받은 값 : " + z + "%" + x + "<br>";
+			str += "결과 :" + (z%x);
+		} else {
+			str = "잘못된 연산자 입니다."
+			document.getElementById('result6').innerHTML = str;
+		} */
+			
+			document.getElementById('result6').innerHTML = str;
+	}
+	
+	function pro7() { 
+		my = prompt("첫번째 사람(가위, 바위, 보)");
+		com = prompt("두번째 사람(가위, 바위, 보)");
+		
+	
+	  if (my == com) {
+         result = "비겼습니다.";
+         
+     } else if ((my == "가위" && com == "보")
+             || (my == "바위" && com == "가위")
+             || (my == "보" && com == "바위")) {
+         result = "첫번째 사람승";
+     } else if ((my == "가위" && com == "바위")
+             || (my == "바위" && com == "보")
+             || (my == "보" && com == "가위")) {
+         result = "두번째 사람승";
+        
+     }  else {
+    	 result = "이상한거 쓰지마세요";
+     }
+	  
+	  result += "<br>결과 :" + my+ "/"+ com;
+	  document.getElementById('result7').innerHTML = result;
+	}
+    
+</script>
+<style type="text/css">
+div {
+	width: 220px;
+	height: 70px;
+	border: 2px solid silver;
+	text-align: center;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important;
+	font-size: 1.3em;
+}
+table, td {border:1px solid black;
+
+}
+
+</style>
+</head>
+<body>
+	<h1>if_ test1</h1>
+	버튼을 클릭하면 수를 입력 받아서 합격인지 불합격인지 출력 기준점수는 60점
+	<br>
+	<button id="but1" onclick="pro1()">합격 or 불합격</button>
+	<br>
+	<br>
+	
+	<div id="result1"></div>
+	<hr color="red">
+	버튼을 클릭하면 수를 입력 받아서 홀수인지 짝수인지 출력
+	<br>
+	<button id="but2" onclick="pro2()">홀수 or 짝수</button>
+	<br>
+	<br>
+	
+	<div id="result2"></div>
+	<hr color="red">
+	버튼을 클릭하면 수를 입력 받아서 수우미양가중 어떤건지 출력
+	<br>
+	<button id="but3" onclick="pro3()">수우미양가</button>
+	<br>
+	<br>
+	
+	<div id="result3"></div>
+	<hr color="red">
+	버튼을 클릭하면 5개의 수를 입력 받아서 평균이 60점 이상이면 합격 출력
+	<br>
+	<button id="but4" onclick="pro4()">합격 or 불합격</button>
+	<br>
+	<br>
+	
+	<div id="result4"></div>
+	<hr color="red">
+	버튼을 클릭하면 2개의 수를 입력 받아서 숫자비교 하여 출력
+	<br>
+	<button id="but5" onclick="pro5()">두개의 숫자비교</button>
+	<br>
+	<br>
+	
+	<div id="result5"></div>
+	<hr color="red">
+		버튼을 클릭하면 2개의 수와 연산자를 입력받아 결과 출력
+	<br>
+	<button id="but6" onclick="pro6()">연산자 결과 출력</button>
+	<br>
+	<br>
+	
+	<div id="result6"></div>
+	
+	<hr color="red">
+		버튼을 클릭하면 2명의 가위바위보를 입력받아 출력
+	<br>
+	<button id="but7" onclick="pro7()">가위바위보</button>
+	<br>
+	<br>
+	
+	<div id="result7"></div>
+	<hr color="red">
+	
+</body>
+<script type="text/javascript">
+document.write("<h3>구구단표</h3>");
+document.write("<table>");
+for (var i = 1; i <= 9; i++) {  
+    document.write("<tr>");
+    document.write("<td>" + i + "</td>");
+    for (var j = 2; j <= 9; j++) { 
+        document.write("<td>" + i * j + "</td>");
+    }
+    document.write("</tr>");
+}
+document.write("</table>");
+</script>
+<hr color="red">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

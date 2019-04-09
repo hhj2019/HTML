@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form_유효성검증</title>
+<link rel="stylesheet" type="text/css" href="../css/buttoncss2.css">
+<style type="text/css">
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+div, textarea {
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+body {
+	font-family: 'Jeju Gothic', sans-serif;
+}
+
+body { //
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+	text-align: center;
+}
+
+div {
+	background-image: url(../images/이쁜사진2.jpg);
+	border-radius: 10px;
+	width: 50%;
+	height: 500px;
+	border: 2px solid #8A0868;
+	overflow: auto;
+	margin: 5px;
+	text-align: center;
+	font-size: 1.8em;
+	margin-left: 25%;
+}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+	f  = document.ff;
+	f.name.focus();
+}
+	function proc1() {
+		
+		// 입력한 값들을 value를 이용해서 가져온다  공백검증
+		name = f.name.value;
+			if(name.trim().length == 0) {
+				alert("이름을 입력하세요");
+				f.name.focus();
+				return;
+			}
+		id = f.id.value;
+			if(id.trim().length < 5 || id.trim().length > 10){
+				alert("아이디를 5~10자리 사이로 입력하세요");
+				f.id.focus();
+				return;
+			}
+		email = f.email.value;
+		if(email.trim().length == 0){
+			alert("email을 입력하세요");
+			f.email.focus();
+			return;
+		}
+		
+		phone = f.phone.value;
+		if(phone.trim().length == 0){
+			alert("phone을 입력하세요");
+			f.phone.focus();
+			return;
+		}
+		// 모두 검증을 통과 했을 때 
+		f.submit();
+		
+	}
+</script>
+</head>
+<body>
+<div>
+	<h3>회원가입</h3>
+	<form action="aa.jsp" method="post"  name = "ff">
+		 이름 : <input type='text' name="name" id='name' >
+		<br>
+		 아이디 : <input type='text'  name="id" id='username'>
+		 <br> 
+		 이메일 : <input type='email' name= "email"  id='email'>
+		 <br>
+		휴대폰 : <input type='tel'   name= "phone"  id='phone'>
+		<br> 
+		<input type="button"  onclick="proc1()" value='전송'>
+		<input type='reset' value='취소'>
+		<br>
+	</form>
+</div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

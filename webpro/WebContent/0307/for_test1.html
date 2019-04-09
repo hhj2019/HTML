@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table, td {
+	border: 1px solid black;
+}
+
+div {
+	width: 100px;
+	height: 300px;
+	border: 2px solid silver;
+	font-size: 1.3em;
+	overflow: scroll;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+
+		str = "";
+		for (k = 0; k < 3; k++) {
+			x = prompt("숫자입력");
+
+			str = "**" + x + "단** <br>";
+			for (i = 1; i < 10; i++) {
+				str += x + "*" + i + "=" + x * i + "<br>";
+
+			}
+			document.getElementById('result1').innerHTML = str;
+		}
+	}
+</script>
+</head>
+<body>
+	<button id="but1" onclick="proc1()">구구단</button>
+	<div id="result1"></div>
+	<hr color="red">
+</body>
+<script type="text/javascript">
+	document.write("<h3>구구단표</h3>");
+	document.write("<table>");
+	for (var i = 1; i <= 9; i++) {
+		document.write("<tr>");
+		document.write("<td>" + i + "</td>");
+		for (var j = 2; j <= 9; j++) {
+			document.write("<td>" + i * j + "</td>");
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+</script>
+<hr color="red">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

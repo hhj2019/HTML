@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 250px;
+	height: 30px;
+	border: 2px solid black;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+<script type="text/javascript">
+	function add() {
+		return su1 + su2
+	}
+	function sub() {
+		return su1 - su2
+	}
+	function multi() {
+		return su1 * su2
+	}
+	function divide() {
+		return su1 / su2
+	}
+	function proc(a) {
+		su1 = document.getElementById("su1").value;
+		su2 = document.getElementById("su2").value;
+		su1 = parseInt(su1);
+		su2 = parseInt(su2);
+
+		switch (a) {
+		case '+':
+			//vadd = add();
+			//	document.getElementById("result1").innerHTML = vadd;
+			document.getElementById("result1").innerHTML = add();
+			break;
+		case '-':
+			//sub();
+			document.getElementById("result1").innerHTML = sub();
+			break;
+		case '*':
+			//multi();
+			document.getElementById("result1").innerHTML = multi();
+			break;
+		case '/':
+			//	divide();
+			document.getElementById("result1").innerHTML = divide();
+			break;
+
+		}
+	}
+</script>
+</head>
+<body>
+	첫번째 :
+	<input type="text" id="su1">
+	<br> 두번째 :
+	<input type="text" id="su2">
+	<br>
+	<input type="button" value="+" onclick="proc('+')">
+	<br>
+	<input type="button" value="-" onclick="proc('-')">
+	<br>
+	<input type="button" value="*" onclick="proc('*')">
+	<br>
+	<input type="button" value="/" onclick="proc('/')">
+	<br>
+	<div id="result1"></div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

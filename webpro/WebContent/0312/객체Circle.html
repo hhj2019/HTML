@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+div {
+height: auto;
+width: 300px;
+padding: 13px;
+border: 2px solid black;
+}
+</style>
+<script type="text/javascript"> 
+
+	function proc1() {
+		
+		circle = {
+				
+				h : 12,
+
+				getArea : function() {
+					return this.h * this.h * 3.14
+				}
+			}
+		circle.getArea()
+			// 가로 세로 면적을 출력
+			str = "반지름 " + circle.h + " * 반지름" + circle.h + " * 3.14 = "+ circle.getArea();
+		
+		document.getElementById("result1").innerHTML = str;
+	}
+	
+	function proc2() {
+		circle = {   };
+		circle.h = 4;
+		
+		area = circle.h * circle.h * 3.14;
+		
+		str = "반지름 " + circle.h + " * 반지름" + circle.h + " * 3.14 = "+ area;
+		document.getElementById("result2").innerHTML = str;
+	}
+	function circle(h) {
+		this.h =h;
+		
+		
+		this.getArea = function() {
+			return this.h * this.h * 3.14;
+		}
+	}
+	function proc3() {
+		str = "";
+		circle1 = new circle(9);
+		 circle1.h = 9;
+		
+		print(circle1);
+		
+		circle2 = new circle(5);
+		print(circle2);
+		
+		circle3 = new circle(10);
+		print(circle3);
+		
+	}
+	str = "";
+	function print(circle) {
+		str += "반지름 " + circle.h + " * 반지름" + circle.h + " * 3.14 = "+ circle.getArea();
+		
+		document.getElementById("result3").innerHTML = str;
+		
+	}
+</script>
+</head>
+<body>
+<h3>버튼을 클릭하면 리터럴에 의한 객체를 생성한다</h3>
+<pre>
+circle = {  
+h : 12,
+  } 
+속성 : h 반지름
+함수 : getArea()
+</pre>
+	<br>
+	<button type="button" onclick="proc1()">원</button>
+	<br>
+	<div id="result1"></div>
+<h3>버튼을 클릭하면 리터럴에 의한 객체를 생성한다</h3>
+<pre>
+circle = { }  
+circle.h = 4;
+속성 : h 반지름
+함수 : getArea()
+</pre>
+	<br>
+	<button type="button" onclick="proc2()">원</button>
+	<br>
+	<div id="result2"></div>
+	<h3>버튼을 클릭하면 리터럴에 의한 객체를 생성한다</h3>
+<pre>
+circle = {  
+circle1 = new circle(9);
+circle2 = new circle(5);	
+circle3 = new circle(10);
+	}
+속성 : h 반지름
+함수 : getArea()
+</pre>
+		<br>
+	<button type="button" onclick="proc3()">원</button>
+	<br>
+	<div id="result3"></div>
+</body>
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

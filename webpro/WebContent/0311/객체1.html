@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+<script>
+	// 객체정의 - 리터럴로 직접 정의 
+
+	var myCar = {
+		model : "BMW",
+		speed : "300",
+		color : "BLACK",
+
+		brake : function() {
+			this.speed = 0;
+		},
+		accel : function() {
+			this.speed = 400;
+		}
+
+	}
+	function proc1() {
+		str = "";
+		str += "모델" +myCar.model + "<br>";
+		str += "색상" +myCar.speed + "<br>";
+		str += "속성" +myCar.color + "<br> <hr> ";
+		
+		
+		myCar.year = 2019;
+		str +="연식" + myCar.year + "<br>";
+		document.getElementById("result1").innerHTML = str;
+		
+		myCar.accel() 
+		document.getElementById("result1").innerHTML +="변경된 속도 = " + myCar.speed;
+		
+		myCar.color = "RED";
+		document.getElementById("result1").innerHTML +="<br>변경된 색상 = " + myCar.color;
+	}
+
+</script>
+</head>
+<body>
+버튼을 클릭하면 리터럴에 의한 객체를 생성한다
+<br>
+	<button type = "button" onclick="proc1()"> 객체생성</button>
+	<br>
+	<div id ="result1"></div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+
+div { //
+	border-radius: 20px;
+	width: 600px;
+	height: 60px;
+	border: 2px solid gray;
+	overflow: auto;
+	margin: 5px;
+	background: #ffffe6;
+	text-align: center;
+	font-size: 1.3em;
+}
+</style>
+<script type="text/javascript">
+	today = new Date();
+	day = today.getDay();
+	function proc1() {
+		today = new Date();
+
+		//alert(today.getDay());
+
+		day = today.getDay();
+		str = "";
+		switch (day) {
+		case 0:
+			str = "일요일";
+			break;
+		case 1:
+			str = "월요일";
+			break;
+		case 2:
+			str = "화요일";
+			break;
+		case 3:
+			str = "수요일";
+			break;
+		case 4:
+			str = "목요일";
+			break;
+		case 5:
+			str = "금요일";
+			break;
+		case 6:
+			str = "토요일";
+			break;
+		}
+		res = today.toLocaleString() + "<br>";
+		res += "오늘은" + str + "입니다";
+		document.getElementById("result1").innerHTML = res;
+	}
+
+	function proc2() {
+		days = [ "일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일" ];
+		day = today.getDay();
+
+		res = today.toDateString() + "<br>";
+		res += "오늘은" + days[day] + "입니다";
+
+		document.getElementById("result2").innerHTML = res;
+	}
+	function proc3() {
+		birday = new Date(1995, 1, 19);
+		times = today.getTime() - birday.getTime();
+		year = times / 1000 / 60 / 60 / 24;
+
+		str = "태어난날 :" + birday.toLocaleString() + "<br>";
+		str += year + "일이 경과했습니다";
+
+		document.getElementById("result3").innerHTML = str;
+	}
+	function check() {
+		// form input date 에서 선택한 값을 가져오기 
+		//document.getElementById("pdate").value;
+		//name 속성을 이용
+		//document.getElementsByName("pdate")[0].value;			
+		pdate = document.ff.pdate.value;
+		pday = new Date(pdate);
+
+		times = today.getTime() - pday.getTime();
+
+		year = parseInt(times / 1000 / 60 / 60 / 24);
+		str = year + 1;
+		if (year > 7) {
+
+			str += "일이 경과했습니다 주문할 수없어요";
+		} else {
+			str += "일이 경과했습니다 감사합니다";
+
+		}
+		document.getElementById("result4").innerHTML = str;
+	}
+</script>
+
+</head>
+<body>
+	요일 구하기 : getDay(), switch() { } 문을 이용한 비교
+	<br>
+	<pre>
+	function proc1() {
+	today = new Date();
+	
+	
+	//alert(today.getDay());
+	
+	day= today.getDay();
+	str = "";
+	switch(day){
+	case 0 :
+		str = "일요일";
+		break;
+	case 1 :
+		str = "월요일";
+		break;
+	case 2 :
+		str = "화요일";
+		break;
+	case 3 :
+		str = "수요일";
+		break;
+	case 4 :
+		str = "목요일";
+		break;
+	case 5 :
+		str = "금요일";
+		break;
+	case 6 :
+		str = "토요일";
+		break;
+	}
+	res = today.toLocaleString() + "<br>";
+	res += "오늘은" + str + "입니다";
+	document.getElementById("result1").innerHTML = res;
+}
+	</pre>
+	<button type="button" onclick="proc1()">실행</button>
+	<br>
+	<div id="result1"></div>
+	<br>
+	<br> 배열을 이용한 요일 구하기
+	<br>
+	<button type="button" onclick="proc2()">요일구하기</button>
+	<br>
+	<div id="result2"></div>
+	<br> 태어난 날로부터 얼마큼 경과했는지
+	<br>
+	<button type="button" onclick="proc3()">날짜구하기</button>
+	<br>
+	<div id="result3"></div>
+	<br>
+	<pre>
+form input date 에서 선택한 값을 가져오기 
+document.getElementById("pdate").value;
+name 속성을 이용
+document.getElementsByName("pdate")[0].value;
+pdate = document.ff.pdate.value;	
+등 여러가지 방법을 이용해서 value 값을 가져올 수 있다.	
+</pre>
+	<form name="ff">
+		구입날짜 : <input type="date" id="pdate" name="pdate">
+		<button type="button" onclick="check()">검사</button>
+		<br>
+		<div id="result4"></div>
+	</form>
+</body>
+
+<script type="text/javascript">
+	var today = new Date();
+	document.write(today.toDateString() + "<br>");
+	document.write(today.toISOString() + "<br>");
+	document.write(today.toJSON() + "<br>");
+	document.write(today.toLocaleDateString() + "<br>");
+	document.write(today.toLocaleTimeString() + "<br>");
+	document.write(today.toLocaleString() + "<br>");
+	document.write(today.toString() + "<br>");
+	document.write(today.toTimeString() + "<br>");
+	document.write(today.toUTCString() + "<br>");
+</script>
+
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+
+</html>

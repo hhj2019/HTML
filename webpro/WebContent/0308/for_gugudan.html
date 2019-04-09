@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 300px;
+	height: 250px;
+	overflow: auto;
+}
+
+table, td {
+	border-spacing: 3px;
+	border: 1px solid olive;
+	text-align: center;
+}
+
+body {
+	background-image: url(../images/이쁜사진2.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 0.8 !important; //
+	font-size: 1.3em;
+}
+</style>
+<script type="text/javascript">
+	function proc1() {
+		str = " ";
+		for (i = 2; i < 10; i++) {
+			str += "##" + i + "단##<br>";
+			for (j = 1; j < 10; j++) {
+				str += i + "*" + j + "=" + i * j + "<br>";
+
+			}
+		}
+		document.getElementById('result1').innerHTML = str;
+
+	}
+
+	function proc2() {
+		str = "";
+
+		for (i = 1; i < 10; i++) {
+			for (j = 2; j < 10; j++) {
+
+				str += j + "*" + i + "=" + j * i;
+
+			}
+			str += "<br>";
+		}
+		document.getElementById('result2').innerHTML = str;
+		//	document.getElementById('result3').innerHTML = str;
+	}
+	
+	
+	function proc3() {
+		
+	str ="";
+	str +="<h3>구구단표</h3>";
+	str +="<table>";
+		/* document.write("<h3>구구단표</h3><br>" );
+		document.write("<table>"); */
+		for (var i = 1; i <= 9; i++) {
+			str +="<tr>";
+			str +="<td>" + i + "</td>";
+			/* document.write("<tr>");
+			document.write("<td>" + i + "</td>"); */
+			for (var j = 2; j <= 9; j++) {
+				str +="<td>" + i * j + "</td>";
+				/* document.write("<td>" + i * j + "</td>"); */
+			}
+			str +="<tr>"; 
+			/* document.write("</tr>"); */
+		}
+		str +="</table>";
+		/* document.write("</table>"); */
+		document.getElementById('result3').innerHTML = str;
+	}
+
+</script>
+</head>
+<body>
+
+	<h3>버튼을 클릭하면 구구단 출력</h3>
+	<button id="but1" onclick="proc1()">실행</button>
+	<div id="result1"></div>
+	<hr color="red">
+	<h3>버튼을 클릭하면 가로로 구구단 출력</h3>
+	<button id="but2" onclick="proc2()">실행</button>
+	<div id="result2"></div>
+	<hr color="red">
+	<h3>버튼을 클릭하면 표로 구구단 출력</h3>
+	<button id="but3" onclick="proc3()">실행</button>
+	<div id="result3"></div>
+	<hr color="red">
+
+
+
+</body>
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>

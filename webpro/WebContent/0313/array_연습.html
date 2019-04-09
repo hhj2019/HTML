@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function proc1(){
+		names = new Array();
+		i=0;
+		while (true){	
+			 a = prompt("사람 이름을 입력하시오. 공백문자를 입력하면 그만 합니다.");
+			 if(a == null || a == "") break;
+			 names[i] = a;
+			 i++;
+		}
+			document.getElementById('result').innerHTML = names;
+		
+	}
+</script>
+
+<style>
+	div{
+		width : 500px;
+		height : auto;
+		margin : 10px;
+		padding : 10px;
+		border : 2px solid gray;
+		background: #ffffe6;
+	}
+</style>
+
+</head>
+
+<body>
+버튼을 클릭하면 이름을 입력받아 배열에 저장한다. <br>
+입력시 취소 버튼을 클릭하거나 입력없이 확인 버튼을 클릭하면 종료하는 것으로 한다.<br><br>
+<button type="button" onclick="proc1()">확인</button>
+<button type="button" onclick ="proc2()">취소</button>
+<div id="result"></div>
+</body>
+<hr color="black">
+<a href="../index.html" target="_self">뒤로가기</a>
+</html>
